@@ -1,15 +1,19 @@
-<header>
-    <nav>
+<nav>
+    <div class="header">
         <div class="logo">
             Logo
         </div>
-        <div >
+        <div>
             <div class="desktop">
-                Links
+                <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Início</a>
+                <a routerLink="menu" routerLinkActive="active-link">Menu</a>
+                <a routerLink="contact" routerLinkActive="active-link">Contato</a>
             </div>
             <div class="mobile">
-                Links mobile
+                <button mat-icon-button>
+                    menu
+                </button>
             </div>
         </div>
-    </nav>
-</header>
+    </div>
+</nav>

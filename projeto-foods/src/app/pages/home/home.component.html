@@ -1,1 +1,54 @@
-<p>home works!</p>
+<main class="main-content">
+    <section class="banner">
+        <div class="banner-info">
+            <h1 class="banner-title">O melhor da culinária artesenal.</h1>
+            <h2 class="banner-subtitle">Hamburgueres especiais preparados com ingredientes selecionados.</h2>
+            <h1 class="banner-title">Um sabor inconfundível.</h1>
+            <button class="order-button">
+                Faça seu pedido
+            </button>
+        </div>
+    </section>
+    <section class="container">
+        <div class="order-steps">
+            <div *ngFor="let step of orderStep" class="order-step">
+                <p class="order-step-title"> {{step.step}}</p>
+                <p>{{step.content}}</p>
+            </div>
+        </div>
+        <div class="order-menus">
+            <button class="order-menu-title" (click)="toogleBurguerContentVisible()">Burguers</button>
+            <div class="order-menu-grid" [ngClass]="{'visible':burguerContentVisible}" *ngIf="burguerContentVisible">
+                <div *ngFor="let burguer of burguer" class="order-menu" [hidden]="!burguerContentVisible">
+                    <img class="order-image" src={{burguer.image}}>
+                    <div class="order-info">
+                        <p class="order-info-title">{{burguer.burguerName}}</p>
+                        <p>Ingredientes: {{burguer.ingredients}}</p>
+                        <p>R${{burguer.price}}</p>
+                    </div>
+                    <button class="add-to-cart">
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="order-menus">
+            <button class="order-menu-title" (click)="toogleDrinkContentVisible()">Drinks</button>
+            <div class="order-menu-grid" [ngClass]="{'visible':drinkContentVisible}" *ngIf="drinkContentVisible">
+                <div *ngFor="let drink of drink" class="order-menu" [hidden]="!drinkContentVisible">
+                    <img class="order-image" src={{drink.image}}>
+                    <div class="order-info">
+                        <p class="order-info-title">{{drink.drinkName}}</p>
+                        <p>R${{drink.price}}</p>
+                    </div>
+                    <button class="add-to-cart">
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <h1 class="contact-title">Visite nossas hamburguerias físicas</h1>
+        </div>
+    </section>
+</main>
