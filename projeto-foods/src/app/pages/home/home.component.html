@@ -32,6 +32,12 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="banner-section">
+        <img src="../../../assets/images/drinks/drink-banner.jpg" />
+        <h1>Aproveite também e peça aquela bebida para acompanhar</h1>
+    </section>
+    <section class="container">
         <div class="order-menus">
             <button class="order-menu-title" (click)="toogleDrinkContentVisible()">Drinks</button>
             <div class="order-menu-grid" [ngClass]="{'visible':drinkContentVisible}" *ngIf="drinkContentVisible">
@@ -47,8 +53,14 @@
                 </div>
             </div>
         </div>
-        <div class="contact">
-            <h1 class="contact-title">Visite nossas hamburguerias físicas</h1>
+        <div class="where-to-find">
+            <div class="where-to-find-info">
+                <h1>Onde nós estamos localizados</h1>
+                <p>...</p>
+            </div>
+            <div class="where-to-find-image">
+                <img src="../../../assets/images/where-to-find.jpg" alt="Onde nos encontramos">
+            </div>
         </div>
     </section>
 </main>
