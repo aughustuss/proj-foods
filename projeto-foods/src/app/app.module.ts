@@ -10,6 +10,9 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './pages/cart/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login/login.component';
+import { SignupComponent } from './components/signup/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { CartComponent } from './pages/cart/cart/cart.component';
     ContactComponent,
     HeaderComponent,
     CartComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
