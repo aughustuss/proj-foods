@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      UserName: ['', Validators.required],
+      Email: ['', Validators.required],
       Password: ['', Validators.required],
     });
   };
@@ -37,8 +37,9 @@ export class LoginComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   };
 
-  onLogin() {
+  onSubmit() {
     if (this.loginForm.valid) {
+      console.log(this.loginForm.value);
       this.auth.logIn(this.loginForm.value).subscribe({
         next: (res) => {
           console.log(res);
@@ -46,8 +47,8 @@ export class LoginComponent implements OnInit {
           this.auth.storeToken(res.accessToken);
           this.auth.storeRefreshToken(res.refreshToken);
           const userPayload = this.auth.decodifyToken();
-          this.userStore.setFullNameForStore(userPayload.name);
-          this.userStore.setRoleForStore(userPayload.role);
+          this.userStore.setFullNameForStore(userPayload.FirstName);
+          this.userStore.setRoleForStore(userPayload.Role);
           this.toast.success({ detail: "Sucesso.", summary: res.message, duration: 5000 });
           this.route.navigate(['']);
         },

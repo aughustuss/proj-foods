@@ -1,0 +1,106 @@
+.login {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .login-outer {
+        padding: 5px;
+        height: auto;
+        min-height: 300px;
+        width: 350px;
+        border: 2px solid var(--tertiary-color);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+
+        .login-wrapper {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            .login-title {
+                color: white;
+                font-weight: bold;
+                font-family: var(--title-font);
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .login-form {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                justify-content: center;
+                align-items: center;
+
+                .login-input {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .input-control:focus::placeholder{
+                        transform: translateY(-15px);
+                        transition: all 200ms ease;
+                        font-size: 10px;
+                    }
+
+                    input {
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 2px solid var(--tertiary-color);
+                        color: white;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+
+        .login-submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            border: none;
+            background-color: var(--tertiary-color);
+            color: var(--main-color);
+            font-weight: bold;
+            font-family: var(--body-font);
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--tertiary-color-hover);
+                transition: all 200ms ease-in-out;
+            }
+        }
+    }
+}
+
+.text-error {
+    color: rgb(207, 54, 54);
+    font-size: 10px;
+    font-family: var(--body-font);
+    align-self: flex-start;
+}
+
+.no-account {
+    align-self: flex-end;
+    color: white;
+    font-size: 10px;
+    font-family: var(--body-font);
+
+    a {
+        text-decoration: underline;
+        color: var(--tertiary-color);
+    }
+}

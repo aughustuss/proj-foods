@@ -1,1 +1,35 @@
-<p>signup works!</p>
+<div class="signup">
+    <div class="signup-outer">
+        <div class="signup-wrapper">
+            <h1 class="signup-title">
+                Crie sua conta
+            </h1>
+            <form class="signup-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
+                <div class="signup-input" [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required', 'FirstName')">
+                    <input class="input-control" formControlName="FirstName" type="text" placeholder="Primeiro Nome" required>
+                    <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName')" class="text-error">Preencha o seu nome.</small>
+                </div>
+                <div class="signup-input" [class.error]="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required', 'LastName')">
+                    <input class="input-control" formControlName="LastName" type="text" placeholder="Sobrenome" required>
+                    <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName')" class="text-error">Preencha o seu sobrenome.</small>
+                </div>
+                <div class="signup-input" [class.error]="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required', 'UserName')">
+                    <input class="input-control" formControlName="UserName" type="text" placeholder="Nome de usuário" required>
+                    <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required','UserName')" class="text-error">Preencha o seu sobrenome.</small>
+                </div>
+                <div class="signup-input" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
+                    <input class="input-control" formControlName="Email" type="email" placeholder="Email" required>
+                    <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')" class="text-error">Preencha o seu sobrenome.</small>
+                </div>
+                <div class="signup-input" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
+                    <input class="input-control" formControlName="Password" type="password" placeholder="Senha" required>
+                    <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')" class="text-error">Preencha o seu sobrenome.</small>
+                </div>
+                <button class="signup-submit" type="submit">Enviar</button>
+            </form>
+            <div class="have-account">
+                Já possui uma conta? <a class="have-account-link" routerLink="/login">Faça o seu login!</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="login">
+    <div class="login-outer">
+        <div class="login-wrapper">
+            <div class="login-title">
+                <h1>Faça agora o seu login</h1>
+            </div>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+                <div class="login-input" [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
+                    <input class="input-control" formControlName="Email" type="email" placeholder="Email" required>
+                    <small *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')" class="text-error">Preencha o seu email.</small>
+                </div>
+                <div class="login-input" [class.error]="loginForm.controls['Password'].dirty && loginForm.hasError('required', 'Password')">
+                    <input class="input-control" formControlName="Password" [type]="type" placeholder="Senha">
+                    <small *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required','Password')" class="text-error">Preencha sua senha.</small>
+                </div> 
+                <button class="login-submit" type="submit">Enviar</button>
+            </form>
+            <div class="no-account">
+                Não possui uma conta? <a routerLink="/register">Crie uma agora!</a>
+            </div>
+        </div>
+    </div>
+</div>
