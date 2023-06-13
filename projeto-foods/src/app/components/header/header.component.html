@@ -7,8 +7,9 @@
             <div class="desktop">
                 <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Início</a>
                 <a routerLink="menu" routerLinkActive="active-link">Contato</a>
-                <a routerLink="cart" routerLink="active-link">Carrinho</a>
-                <a routerLink="login" routerLinkActive="active-link">Login</a>
+                <a *ngIf="isLoggedIn()" routerLink="cart" routerLink="active-link">Carrinho</a>
+                <a *ngIf="!isLoggedIn()" routerLink="login" class="logLink" routerLinkActive="active-link">Login</a>
+                <button class="logButton" *ngIf="isLoggedIn()" (click)="logOut()">Logout</button>
             </div>
             <div class="mobile">
                 <button mat-icon-button>

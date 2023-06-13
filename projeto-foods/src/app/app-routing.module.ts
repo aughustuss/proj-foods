@@ -6,12 +6,13 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CartComponent } from './pages/cart/cart/cart.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { SignupComponent } from './components/signup/signup/signup.component';
+import { authGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'cart', component: CartComponent},
+  {path: 'cart', component: CartComponent, canActivate: [authGuard()]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
 ];

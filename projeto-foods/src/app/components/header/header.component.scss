@@ -48,6 +48,7 @@ nav {
             @media screen and (min-width: 640px) {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 gap: 4rem;
             }
         }
@@ -62,5 +63,21 @@ nav {
 
         ;
 
+    }
+}
+
+.logButton, .logLink{
+    background-color: var(--tertiary-color-hover);
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--main-color);
+    border: none;
+    font-family: var(--body-font);
+    &:hover{
+        transition: all ease 200ms;
+        transform: scale(1.01);
     }
 }
