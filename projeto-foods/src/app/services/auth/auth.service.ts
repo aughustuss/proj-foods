@@ -12,7 +12,7 @@ export class AuthService {
   private baseUrl: string = "https://localhost:7076/api/User";
   private userPayload: any;
   constructor(private http: HttpClient, private router: Router) {
-
+    this.userPayload = this.decodifyToken();
   }
 
   signUp(userObj: any) {
@@ -28,19 +28,17 @@ export class AuthService {
     this.router.navigate(['login']);
   };
 
-  storeToken(token: string, callback?: () => void) {
+  storeToken(token: string) {
     window.sessionStorage.setItem("token", token);
-    if (callback)
-      callback()
   };
 
+  getSessionToken() {
+    return window.sessionStorage.getItem("token");
+  }
   storeRefreshToken(refreshtoken: string) {
     window.sessionStorage.setItem("refreshtoken", refreshtoken);
   };
 
-  getToken(): Observable<string | null> {
-    return of(window.sessionStorage.getItem("token"));
-  }
 
   getRefreshToken() {
     return window.sessionStorage.getItem("refreshtoken");
@@ -50,16 +48,15 @@ export class AuthService {
     return !!window.sessionStorage.getItem("token");
   };
 
-  // decodifyToken() {
-  //   const jwtHelper = new JwtHelperService();
-  //   const token = this.getToken()!;
-  //   console.log(jwtHelper.decodeToken(token));
-  //   return jwtHelper.decodeToken(token);
-  // };
+  decodifyToken() {
+    const jwtHelper = new JwtHelperService();
+    const token = this.getSessionToken()!;
+    return jwtHelper.decodeToken(token);
+  };
 
   getFullName() {
     if (this.userPayload)
-      return this.userPayload.name;
+      return this.userPayload.unique_name;
   };
 
   getRole() {

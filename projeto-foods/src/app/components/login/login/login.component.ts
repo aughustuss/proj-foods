@@ -41,13 +41,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.auth.logIn(this.loginForm.value).subscribe({
         next: (res) => {
-          console.log(res);
+          this.auth.storeToken(res.accessToken);
           this.loginForm.reset();
-          this.auth.storeToken(res.accesstoken);
           this.auth.storeRefreshToken(res.refreshToken);
-          // const userPayload = this.auth.decodifyToken();
-          // this.userStore.setFullNameForStore(userPayload.fullName);
-          // this.userStore.setRoleForStore(userPayload.role);
+          const userPayload = this.auth.decodifyToken();
+          this.userStore.setFullNameForStore(userPayload.unique_name);
+          this.userStore.setRoleForStore(userPayload.role);
           this.toast.success({ detail: "SUCCESS.", summary: res.message, duration: 5000 });
           this.route.navigate(['']);
         },
