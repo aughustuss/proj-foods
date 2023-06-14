@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { TokenApi } from 'src/app/models/tokenapiModel';
+import { Observable, interval, of } from 'rxjs';
+import { take, map, filter } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,38 +24,38 @@ export class AuthService {
   };
 
   signOut() {
-    localStorage.clear();
+    window.sessionStorage.clear();
     this.router.navigate(['login']);
   };
 
   storeToken(token: string, callback?: () => void) {
-    localStorage.setItem("token", token);
+    window.sessionStorage.setItem("token", token);
     if (callback)
       callback()
   };
 
   storeRefreshToken(refreshtoken: string) {
-    localStorage.setItem("refreshtoken", refreshtoken);
+    window.sessionStorage.setItem("refreshtoken", refreshtoken);
   };
 
-  getToken() {
-    return localStorage.getItem('token')
-  };
+  getToken(): Observable<string | null> {
+    return of(window.sessionStorage.getItem("token"));
+  }
 
   getRefreshToken() {
-    return localStorage.getItem("refreshtoken");
+    return window.sessionStorage.getItem("refreshtoken");
   };
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem("token");
+    return !!window.sessionStorage.getItem("token");
   };
 
-  decodifyToken() {
-    const jwtHelper = new JwtHelperService();
-    const token = this.getToken()!;
-    console.log(jwtHelper.decodeToken(token));
-    return jwtHelper.decodeToken(token);
-  };
+  // decodifyToken() {
+  //   const jwtHelper = new JwtHelperService();
+  //   const token = this.getToken()!;
+  //   console.log(jwtHelper.decodeToken(token));
+  //   return jwtHelper.decodeToken(token);
+  // };
 
   getFullName() {
     if (this.userPayload)

@@ -14,7 +14,7 @@ import { CartComponent } from './pages/cart/cart/cart.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login/login.component';
 import { SignupComponent } from './components/signup/signup/signup.component';
-import { TokenInterceptor } from './interceptors/token.interceptor';
+import { TokenInterceptor, httpInterceptorProvider } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,11 +36,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptor,
-    multi: true
-  }],
+  providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
