@@ -7,15 +7,8 @@ import { StoreService } from 'src/app/services/store/store.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  public fullName: string = "";
   constructor (private auth: AuthService, private store: StoreService){}
 
-  ngOnInit(){
-    this.store.getFullNameFromStore().subscribe(val => {
-      let fullName = this.auth.getFullName();
-      this.fullName = val || fullName;
-    })
-  };
   isLoggedIn(): boolean {
     return this.auth.isLoggedIn();
   }
