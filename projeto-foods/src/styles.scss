@@ -29,7 +29,7 @@ $projeto-foods-theme: mat.define-light-theme((color: (primary: $projeto-foods-pr
 // that you are using.
 @include mat.all-component-themes($projeto-foods-theme);
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald&family=Poppins&display=swap');
 
 :root{
     --main-color: #704e27;
@@ -38,8 +38,9 @@ $projeto-foods-theme: mat.define-light-theme((color: (primary: $projeto-foods-pr
     --secondary-color-hover: #242424;
     --tertiary-color:#e7b630;
     --tertiary-color-hover:#d8a005 ;
-    --title-font: Oswald, 'sans-serif';
+    --form--title-font: Oswald, 'sans-serif';
     --body-font: Poppins, 'sans-serif';
+    --title-font: Alfa Slab One, 'cursive';
 }
 
 * {

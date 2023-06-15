@@ -11,32 +11,32 @@ export class DrinksService {
     {
       drinkName: 'Antártica Original',
       image: '../../../assets/images/drinks/drink1.png',
-      price: "",
+      price: "14,90",
     },
     {
       drinkName: 'Heineken',
       image: '../../../assets/images/drinks/drink2.jpg',
-      price: "",
+      price: "18,90",
     },
     {
       drinkName: 'Budweiser',
       image: '../../../assets/images/drinks/drink4.jpg',
-      price: "",
+      price: "18,90",
     },
     {
       drinkName: 'Corona Extra',
       image: '../../../assets/images/drinks/drink5.jpg',
-      price: "",
+      price: "19,90",
     },
     {
       drinkName: 'Jack Daniels',
       image: '../../../assets/images/drinks/drink6.jpg',
-      price: "",
+      price: "12,90 - Dose",
     },
     {
       drinkName: 'Stella Artois',
       image: '../../../assets/images/drinks/drink7.jpg',
-      price: "",
+      price: "19,90",
     }
   ]
 }

@@ -1,4 +1,4 @@
 export class TokenApi {
-    token!: string;
-    refreshtolen!: string;
+    accessToken!: string;
+    refreshToken!: string;
 }

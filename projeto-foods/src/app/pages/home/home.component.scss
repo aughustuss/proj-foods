@@ -18,7 +18,7 @@ button {
 
 .banner {
     background-image: url('../../../assets/images/burguers/banner.jpg');
-    height: 700px;
+    min-height: 700px;
     width: 100%;
     object-fit: cover;
     background-position: center;
@@ -26,26 +26,27 @@ button {
 
 .banner-info {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 10%;
     color: white;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 800px;
+    max-width:500px;
 
     .banner-title {
         font-family: var(--title-font);
-        font-weight: bold;
-        line-height: 5rem;
-        font-size: 3rem;
-
+        
+        font-size: 2rem;
+        letter-spacing: 3px;
         @media screen and (min-width: 748px) {
-            font-size: 4rem;
+            font-size: 3rem;
         }
-
+        
         @media screen and (min-width: 1024px) {
-            font-size: 5rem;
+            line-height: 5rem;
+            
+            font-size: 4rem;
         }
     }
 
@@ -126,11 +127,21 @@ button {
     margin-bottom: 50px;
     padding: 10px;
     border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+
     .order-menu-title {
         color: white;
         font-family: var(--title-font);
-        font-size: 5rem;
-        font-weight: bold
+        font-size: 3rem;
+        text-align: center;
+
+        @media screen and (min-width: 640px) {
+            font-size: 4rem;
+        };
+        @media screen and (min-width: 768px){
+            font-size: 5rem;
+        }
     }
 
     ;
@@ -138,10 +149,13 @@ button {
     .order-menu-grid.visible {
         display: grid;
         transform: translateY(0px);
-        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         transition: all 300ms ease;
         opacity: 1;
+        grid-template-columns: repeat(1, 1fr);
+        @media screen and (min-width: 1024px){
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     .order-menu-grid {
@@ -158,18 +172,17 @@ button {
         gap: 10px;
         background-color: rgb(27, 27, 27);
         border-radius: 3px;
-        width: 100%;
-
+        
         &:hover {
             transition: all 200ms ease-in-out;
             transform: scale(1.01);
         }
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 5px;
-
+        
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 5px;
+        
         @media screen and (min-width: 768px) {
             flex-direction: row;
         }
@@ -178,8 +191,8 @@ button {
     .order-image {
         object-fit: cover;
         border-radius: 5px;
-        width: 100%;
         height: 110px;
+        width: 100%;
         @media screen and (min-width: 768px) {
             width: 120px;
             height: 120px;
@@ -202,7 +215,6 @@ button {
 
         .order-info-title {
             font-size: 2rem;
-            font-weight: bold;
             font-family: var(--title-font);
             text-align: center;
             align-self: center
@@ -254,8 +266,14 @@ button {
         text-align: center;
         color: white;
         font-family: var(--title-font);
-        font-size: 3rem;
-        font-weight: bold;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        @media screen and (min-width: 640px) {
+            font-size: 3rem;
+        }
+        @media screen and (min-width: 1024px) {
+            font-size: 4rem;
+        }
     }
 }
 
@@ -278,7 +296,7 @@ button {
         justify-content: flex-start;
         gap: 10px;
         h1{
-            font-weight: bold;
+            letter-spacing: 2px;
             font-size: 3rem;
             font-family: var(--title-font);
             text-align: center;
@@ -299,4 +317,10 @@ button {
             }
         }
     }
+}
+
+.price{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--body-font);
 }

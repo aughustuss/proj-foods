@@ -1,23 +1,53 @@
 <div class="login">
-    <div class="login-outer">
+    <div *ngIf="!isOpen" class="login-outer">
         <div class="login-wrapper">
             <div class="login-title">
                 <h1>Faça agora o seu login</h1>
             </div>
-            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
-                <div class="login-input" [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
-                    <input class="input-control" formControlName="Email" type="email" placeholder="Email" required>
-                    <small *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')" class="text-error">Preencha o seu email.</small>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="login-input"
+                    [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
+                    <div class="login-input-wrapper">
+                        <input class="input-control" formControlName="Email" type="email" required>
+                        <label class="label-control" for="Email">Email</label>
+                    </div>
+                    <small *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')"
+                        class="text-error">Preencha o seu email.</small>
                 </div>
-                <div class="login-input" [class.error]="loginForm.controls['Password'].dirty && loginForm.hasError('required', 'Password')">
-                    <input class="input-control" formControlName="Password" [type]="type" placeholder="Senha">
-                    <small *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required','Password')" class="text-error">Preencha sua senha.</small>
-                </div> 
-                <button class="login-submit" type="submit">Enviar</button>
+                <div class="login-input"
+                    [class.error]="loginForm.controls['Password'].dirty && loginForm.hasError('required', 'Password')">
+                    <div class="login-input-wrapper">
+                        <input class="input-control" formControlName="Password" [type]="type" required>
+                        <label class="label-control" for="Email">Senha</label>
+                    </div>
+                    <small *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required','Password')"
+                        class="text-error">Preencha sua senha.</small>
+                </div>
+                <div class="forgot-pass">
+                    Esqueceu sua senha? <button (click)="showModal()" type="button">Redefina agora.</button>
+                </div>
+                <button class="btn-submit" type="submit">Enviar</button>
             </form>
             <div class="no-account">
                 Não possui uma conta? <a routerLink="/register">Crie uma agora!</a>
             </div>
         </div>
     </div>
+    <form *ngIf="isOpen" class="modal-div">
+        <div class="modal-wrapper">
+            <span (click)="showModal()" class="close-btn">X</span>
+            <div class="modal-title">
+                <h1>Redefina sua senha</h1>
+            </div>
+            <div class="modal-content">
+                <div class="modal-input-wrapper">
+                    <input class="modal-control" placeholder="." [(ngModel)]="resetPasswordEmail" (ngModelChange)="checkEmailValue($event)" name="email" type="email" required>
+                    <label for="Email">Email</label>
+                </div>
+                <small *ngIf="!isValidEmail"
+                class="text-error">Email inválido.</small>
+                <button class="modal-btn-submit" type="submit">Enviar</button>
+            </div>
+        </div>
+    </form>
 </div>

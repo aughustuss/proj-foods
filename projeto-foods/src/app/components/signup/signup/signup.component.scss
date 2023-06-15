@@ -17,15 +17,19 @@
         justify-content: space-between;
         gap: 10px;
         width: 95%;
-        @media screen and (min-width: 640px){
+
+        @media screen and (min-width: 640px) {
             width: 70%;
         }
-        @media screen and (min-width: 768px){
+
+        @media screen and (min-width: 768px) {
             width: 50%;
         }
+
         @media screen and (min-width: 1024px) {
             width: 30%;
         }
+
         .signup-wrapper {
             padding: 5px;
             display: flex;
@@ -35,15 +39,15 @@
             .signup-title {
                 color: white;
                 font-weight: bold;
-                font-family: var(--title-font);
+                font-family: var(--form--title-font);
                 text-align: center;
-                font-size: 2rem;
+                font-size: 3rem;
             }
 
             .signup-form {
                 display: flex;
                 flex-direction: column;
-                gap: 25px;
+                gap: 40px;
                 justify-content: center;
                 align-items: center;
 
@@ -53,10 +57,36 @@
                     flex-direction: column;
                     align-items: center;
 
-                    .input-control:focus::placeholder {
-                        transform: translateY(-15px);
-                        transition: all 200ms ease;
-                        font-size: 10px;
+                    .signup-input-wrapper {
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+
+                        label {
+                            position: absolute;
+                            left: 0;
+                            font-size: 14px;
+                            padding: 0px 5px;
+                            color: white;
+                            z-index: 0;
+                        }
+
+                        .input-control:focus~label {
+                            transform: translateY(-120%);
+                            left: -5px;
+                            font-size: 12px;
+                            pointer-events: none;
+                            transition: all 200ms;
+                        }
+
+                        .input-control:not(:focus)~label {
+                            transform: translateY(0%);
+                            left: 0px;
+                            font-size: 14px;
+                            pointer-events: none;
+                            transition: all 200ms;
+                        }
                     }
 
                     input {
@@ -65,9 +95,10 @@
                         border: none;
                         border-bottom: 2px solid var(--tertiary-color);
                         color: white;
-                        padding: 10px;
+                        padding: 5px 0px;
                     }
                 }
+
                 .signup-submit {
                     display: flex;
                     justify-content: center;
@@ -82,7 +113,7 @@
                     padding: 5px;
                     border-radius: 3px;
                     cursor: pointer;
-            
+
                     &:hover {
                         background-color: var(--tertiary-color-hover);
                         transition: all 200ms ease-in-out;

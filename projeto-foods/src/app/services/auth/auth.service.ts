@@ -1,20 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { TokenApi } from 'src/app/models/tokenapiModel';
-import { Observable, interval, of } from 'rxjs';
-import { take, map, filter } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnInit {
   private baseUrl: string = "https://localhost:7076/api/User";
   private userPayload: any;
+  token: string | null = '';
   constructor(private http: HttpClient, private router: Router) {
     this.userPayload = this.decodifyToken();
   }
-
+  ngOnInit(): void {
+    this.getSessionToken();
+  }
   signUp(userObj: any) {
     return this.http.post<any>(`${this.baseUrl}/register`, userObj);
   };

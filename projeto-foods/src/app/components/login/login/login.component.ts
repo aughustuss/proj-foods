@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
   type: string = 'password';
   isText: boolean = false;
   eyeIcon: string = 'fa-eye-slash';
+  isOpen: boolean = false;
+  public resetPasswordEmail: string = '';
+  public isValidEmail: boolean = false;
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
@@ -31,16 +34,21 @@ export class LoginComponent implements OnInit {
     });
   };
 
+
   hideShowPass() {
     this.isText = !this.isText;
     this.isText ? (this.eyeIcon = 'fa-eye') : (this.eyeIcon = 'fa-eye-slash');
     this.isText ? (this.type = 'text') : (this.type = 'password');
   };
+  showModal() {
+    this.isOpen = !this.isOpen;
+  }
 
   onSubmit() {
     if (this.loginForm.valid) {
       this.auth.logIn(this.loginForm.value).subscribe({
         next: (res) => {
+          console.log(res);
           this.auth.storeToken(res.accessToken);
           this.loginForm.reset();
           this.auth.storeRefreshToken(res.refreshToken);
@@ -59,5 +67,11 @@ export class LoginComponent implements OnInit {
       ValidateForm.validateAllFormFields(this.loginForm);
     }
   }
+  checkEmailValue(event: string) {
+    const eValue = event;
+    const pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    this.isValidEmail = pattern.test(eValue);
+    return this.isValidEmail;
+  };
 }
 
