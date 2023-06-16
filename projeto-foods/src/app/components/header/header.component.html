@@ -3,17 +3,17 @@
         <a routerLink="" class="logo">
             AD's Burguers
         </a>
-        <div>
+        <div class="header-wrapper">
             <div class="desktop">
                 <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Início</a>
                 <a routerLink="menu" routerLinkActive="active-link">Contato</a>
                 <a *ngIf="isLoggedIn()" routerLink="cart" routerLinkActive="active-link">Carrinho</a>
-                <a *ngIf="!isLoggedIn()" routerLink="login" class="logLink" routerLinkActive="active-link">Login</a>
-                <button class="logButton" *ngIf="isLoggedIn()" (click)="logOut()">Logout</button>
+                <a *ngIf="!isLoggedIn()" routerLink="login" routerLinkActive="active-link" >Login</a>
+                <button mat-raised-button class="accountBtn" color="primary" *ngIf="isLoggedIn()" (click)="logOut()">Logout</button>
             </div>
             <div class="mobile">
                 <button mat-icon-button>
-                    menu
+                    <mat-icon>menu</mat-icon>
                 </button>
             </div>
         </div>

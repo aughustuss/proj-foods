@@ -4,43 +4,53 @@
             <h1 class="signup-title">
                 Crie sua conta
             </h1>
-            <form class="signup-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
-                <div class="signup-input" [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required', 'FirstName')">
+            <form class="signup-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="signup-input"
+                    [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required', 'FirstName')">
                     <div class="signup-input-wrapper">
                         <input class="input-control" formControlName="FirstName" type="text" required>
                         <label for="FirstName">Primeiro Nome</label>
                     </div>
-                    <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName')" class="text-error">Preencha o seu nome.</small>
+                    <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName')"
+                        class="text-error">Preencha o seu nome.</small>
                 </div>
-                <div class="signup-input" [class.error]="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required', 'LastName')">
+                <div class="signup-input"
+                    [class.error]="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required', 'LastName')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="LastName" type="text"required>
+                        <input class="input-control" formControlName="LastName" type="text" required>
                         <label for="LastName">Sobrenome</label>
                     </div>
-                    <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName')" class="text-error">Preencha o seu sobrenome.</small>
+                    <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName')"
+                        class="text-error">Preencha o seu sobrenome.</small>
                 </div>
-                <div class="signup-input" [class.error]="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required', 'UserName')">
+                <div class="signup-input"
+                    [class.error]="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required', 'UserName')">
                     <div class="signup-input-wrapper">
                         <input class="input-control" formControlName="UserName" type="text" required>
                         <label for="UserName">Nome de usuário</label>
                     </div>
-                    <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required','UserName')" class="text-error">Preencha o seu nome de usuário.</small>
+                    <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required','UserName')"
+                        class="text-error">Preencha o seu nome de usuário.</small>
                 </div>
-                <div class="signup-input" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
+                <div class="signup-input"
+                    [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="Email" type="email"required>
+                        <input class="input-control" formControlName="Email" type="email" required>
                         <label for="Email">Email</label>
                     </div>
-                    <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')" class="text-error">Preencha o seu email.</small>
+                    <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')"
+                        class="text-error">Preencha o seu email.</small>
                 </div>
-                <div class="signup-input" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
+                <div class="signup-input"
+                    [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
                     <div class="signup-input-wrapper">
                         <input class="input-control" formControlName="Password" type="password" required>
                         <label for="Password">Senha</label>
                     </div>
-                    <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')" class="text-error">Preencha a sua senha.</small>
+                    <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')"
+                        class="text-error">Preencha a sua senha.</small>
                 </div>
-                <button class="signup-submit" type="submit">Enviar</button>
+                <button mat-raised-button color="primary" class="signup-submit" type="submit">Enviar</button>
             </form>
             <div class="have-account">
                 Já possui uma conta? <a class="have-account-link" routerLink="/login">Faça o seu login!</a>

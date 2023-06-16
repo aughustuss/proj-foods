@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { Router, RouterModule } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgToastService } from 'ng-angular-popup'
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { StoreService } from 'src/app/services/store/store.service';
 import ValidateForm from 'src/app/helpers/validateform';
 import { ResetpasswordService } from 'src/app/services/resetpassword/resetpassword.service';
+import {MatButtonModule} from '@angular/material/button'
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  standalone: true,
+  imports: [MatButtonModule, RouterModule, CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;

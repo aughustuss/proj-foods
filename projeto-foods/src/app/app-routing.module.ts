@@ -10,7 +10,8 @@ import { authGuard } from './guards/auth.guard';
 import { ResetComponent } from './pages/reset/reset.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'cart', component: CartComponent, canActivate: [authGuard]},

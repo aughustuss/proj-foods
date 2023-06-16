@@ -73,18 +73,13 @@
                             z-index: 0;
                         }
 
-                        .input-control:focus~label {
+                        .input-control::placeholder{
+                            color: transparent;
+                        }
+                        .input-control:focus~label, .input-control:not(:placeholder-shown)~label {
                             transform: translateY(-120%);
                             left: -5px;
                             font-size: 12px;
-                            pointer-events: none;
-                            transition: all 200ms;
-                        }
-
-                        .input-control:not(:focus)~label {
-                            transform: translateY(0%);
-                            left: 0px;
-                            font-size: 14px;
                             pointer-events: none;
                             transition: all 200ms;
                         }
@@ -145,7 +140,7 @@
         color: var(--tertiary-color);
     }
 }
-    
+
 .forgot-pass {
     font-size: 14px;
     color: white;
@@ -221,15 +216,7 @@
             color: white;
             font-size: 1rem;
             font-family: var(--body-font);
-            padding: 1px 8px;
-            border-radius: 99999px;
-            background-color: gray;
             cursor: pointer;
-
-            &:hover {
-                transition: all 200ms;
-                background-color: darkgray;
-            }
         }
 
         .modal-content {
@@ -257,9 +244,10 @@
                 }
                 .modal-control:focus~label, .modal-control:not(:placeholder-shown)~label{
                     transform: translateY(-120%);
+                    left: -5px;
                     font-size: 12px;
                     pointer-events: none;
-                    transition: all 300ms;
+                    transition: all 200ms;
                 }   
             }
 
@@ -269,7 +257,7 @@
                 border: none;
                 border-bottom: 2px solid var(--tertiary-color);
                 color: white;
-                padding: 5px 5px;
+                padding: 5px 0px;
             }
 
         }

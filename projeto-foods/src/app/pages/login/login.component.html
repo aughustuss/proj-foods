@@ -8,7 +8,7 @@
                 <div class="login-input"
                     [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
                     <div class="login-input-wrapper">
-                        <input class="input-control" formControlName="Email" type="email" required>
+                        <input placeholder="Email" class="input-control" formControlName="Email" type="email" required>
                         <label class="label-control" for="Email">Email</label>
                     </div>
                     <small *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')"
@@ -17,7 +17,7 @@
                 <div class="login-input"
                     [class.error]="loginForm.controls['Password'].dirty && loginForm.hasError('required', 'Password')">
                     <div class="login-input-wrapper">
-                        <input class="input-control" formControlName="Password" [type]="type" required>
+                        <input placeholder="Senha" class="input-control" formControlName="Password" [type]="type" required>
                         <label class="label-control" for="Email">Senha</label>
                     </div>
                     <small *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required','Password')"
@@ -26,7 +26,7 @@
                 <div class="forgot-pass">
                     Esqueceu sua senha? <button (click)="showModal()" type="button">Redefina agora.</button>
                 </div>
-                <button class="btn-submit" type="submit">Enviar</button>
+                <button mat-raised-button color="primary" class="btn-submit" type="submit">Enviar</button>
             </form>
             <div class="no-account">
                 Não possui uma conta? <a routerLink="/register">Crie uma agora!</a>
@@ -47,7 +47,7 @@
                 </div>
                 <small *ngIf="!isValidEmail"
                 class="text-error">Email inválido.</small>
-                <button (click)="confirmToSend()" class="modal-btn-submit" type="button">Enviar</button>
+                <button mat-raised-button color="primary" (click)="confirmToSend()" class="modal-btn-submit" type="button">Enviar</button>
             </div>
         </div>
     </div>
