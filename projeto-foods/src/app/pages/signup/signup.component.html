@@ -8,7 +8,7 @@
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required', 'FirstName')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="FirstName" type="text" required>
+                        <input placeholder="Primeiro nome" class="input-control" formControlName="FirstName" type="text" required>
                         <label for="FirstName">Primeiro Nome</label>
                     </div>
                     <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName')"
@@ -17,7 +17,7 @@
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required', 'LastName')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="LastName" type="text" required>
+                        <input placeholder="Último nome" class="input-control" formControlName="LastName" type="text" required>
                         <label for="LastName">Sobrenome</label>
                     </div>
                     <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName')"
@@ -26,7 +26,7 @@
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required', 'UserName')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="UserName" type="text" required>
+                        <input placeholder="Nome de usuário" class="input-control" formControlName="UserName" type="text" required>
                         <label for="UserName">Nome de usuário</label>
                     </div>
                     <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required','UserName')"
@@ -35,7 +35,7 @@
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="Email" type="email" required>
+                        <input placeholder="Email" class="input-control" formControlName="Email" type="email" required>
                         <label for="Email">Email</label>
                     </div>
                     <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')"
@@ -44,7 +44,7 @@
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
                     <div class="signup-input-wrapper">
-                        <input class="input-control" formControlName="Password" type="password" required>
+                        <input placeholder="Senha" class="input-control" formControlName="Password" type="password" required>
                         <label for="Password">Senha</label>
                     </div>
                     <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')"

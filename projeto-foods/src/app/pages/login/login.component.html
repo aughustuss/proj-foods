@@ -5,6 +5,7 @@
                 <h1>Faça agora o seu login</h1>
             </div>
             <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <small *ngIf="loginErrorMessage.length > 0" class="text-error" >{{loginErrorMessage}}*</small>
                 <div class="login-input"
                     [class.error]="loginForm.controls['Email'].dirty && loginForm.hasError('required', 'Email')">
                     <div class="login-input-wrapper">
@@ -46,10 +47,9 @@
                     <input class="modal-control" placeholder="." [(ngModel)]="resetPasswordEmail" (ngModelChange)="checkEmailValue($event)" name="email" type="email" required>
                     <label for="Email">Email</label>
                 </div>
-
+                
                 <small *ngIf="!isValidEmail"
                 class="text-error">Email inválido.</small>
-                
                 <button mat-raised-button color="primary" (click)="confirmToSend()" class="modal-btn-submit" type="button">Enviar</button>
             </div>
         </div>
