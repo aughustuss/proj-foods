@@ -5,6 +5,7 @@ import { NgToastService } from 'ng-angular-popup'
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { StoreService } from 'src/app/services/store/store.service';
 import ValidateForm from 'src/app/helpers/validateform';
+import { ResetpasswordService } from 'src/app/services/resetpassword/resetpassword.service';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
     private route: Router,
     private toast: NgToastService,
     private userStore: StoreService,
+    private resetPassword: ResetpasswordService
   ) { }
 
   ngOnInit(): void {
@@ -73,5 +75,20 @@ export class LoginComponent implements OnInit {
     this.isValidEmail = pattern.test(eValue);
     return this.isValidEmail;
   };
+
+  confirmToSend() {
+    if (this.checkEmailValue(this.resetPasswordEmail)) {
+      this.resetPassword.sendResetPasswordLink(this.resetPasswordEmail).subscribe({
+        next: (res) => {
+          this.resetPasswordEmail = '';
+          this.isOpen = !this.isOpen;
+          alert("Email enviado com sucesso.");
+        },
+        error: (e) => {
+          console.log("Erro:", e);
+        },
+      });
+    }
+  }
 }
 

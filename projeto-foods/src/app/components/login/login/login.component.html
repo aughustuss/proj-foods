@@ -33,11 +33,12 @@
             </div>
         </div>
     </div>
-    <form *ngIf="isOpen" class="modal-div">
+    <div *ngIf="isOpen" class="modal-div">
         <div class="modal-wrapper">
-            <span (click)="showModal()" class="close-btn">X</span>
+            <span (click)="showModal()" class="close-btn">x</span>
             <div class="modal-title">
                 <h1>Redefina sua senha</h1>
+                <p class="modal-title-info">Digite o seu e-mail cadastrado para que possamos enviar o código de recuperação</p>
             </div>
             <div class="modal-content">
                 <div class="modal-input-wrapper">
@@ -46,8 +47,8 @@
                 </div>
                 <small *ngIf="!isValidEmail"
                 class="text-error">Email inválido.</small>
-                <button class="modal-btn-submit" type="submit">Enviar</button>
+                <button (click)="confirmToSend()" class="modal-btn-submit" type="button">Enviar</button>
             </div>
         </div>
-    </form>
+    </div>
 </div>
