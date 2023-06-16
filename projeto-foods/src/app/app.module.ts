@@ -10,11 +10,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CartComponent } from './pages/cart/cart/cart.component';
+import { CartComponent } from './pages/cart/cart.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './components/login/login/login.component';
-import { SignupComponent } from './components/signup/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component'; 
+import { SignupComponent } from './pages/signup/signup.component'; 
 import { TokenInterceptor, httpInterceptorProvider } from './interceptors/token.interceptor';
+import { ResetComponent } from './pages/reset/reset.component'; 
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TokenInterceptor, httpInterceptorProvider } from './interceptors/token.
     CartComponent,
     LoginComponent,
     SignupComponent,
+    ResetComponent,
   ],
   imports: [
     BrowserModule,

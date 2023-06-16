@@ -1,0 +1,30 @@
+<div class="login">
+    <div class="login-outer">
+        <div class="login-wrapper">
+            <div class="login-title">
+                <h1>Redefina a sua senha</h1>
+            </div>
+            <form class="login-form" [formGroup]="resetPasswordForm" (ngSubmit)="onSubmit()" >
+                <div class="login-input"
+                    [class.error]="resetPasswordForm.controls['Password'].dirty && resetPasswordForm.hasError('required', 'Password')">
+                    <div class="login-input-wrapper">
+                        <input class="input-control" placeholder="." formControlName="Password" type="password" required>
+                        <label class="label-control" for="Password">Senha</label>
+                    </div>
+                    <small *ngIf="resetPasswordForm.controls['Password'].dirty && resetPasswordForm.hasError('required','Password')"
+                        class="text-error">Preencha sua senha.</small>
+                </div>
+                <div class="login-input"
+                    [class.error]="resetPasswordForm.controls['ConfirmPassword'].dirty && resetPasswordForm.hasError('required', 'ConfirmPassword')">
+                    <div class="login-input-wrapper">
+                        <input class="input-control" placeholder="." formControlName="ConfirmPassword" required>
+                        <label class="label-control" for="ConfirmPassword">Repita a Senha</label>
+                    </div>
+                    <small *ngIf="resetPasswordForm.controls['ConfirmPassword'].dirty && resetPasswordForm.hasError('required','ConfirmPassword')"
+                        class="text-error">Repita a sua senha.</small>
+                </div>
+                <button class="btn-submit" type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
