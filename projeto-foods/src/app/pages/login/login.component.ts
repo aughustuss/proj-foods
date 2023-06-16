@@ -8,13 +8,14 @@ import ValidateForm from 'src/app/helpers/validateform';
 import { ResetpasswordService } from 'src/app/services/resetpassword/resetpassword.service';
 import {MatButtonModule} from '@angular/material/button'
 import { CommonModule } from '@angular/common';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  imports: [MatButtonModule, RouterModule, CommonModule, FormsModule, ReactiveFormsModule]
+  imports: [MatButtonModule, RouterModule, CommonModule, FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule]
 })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;

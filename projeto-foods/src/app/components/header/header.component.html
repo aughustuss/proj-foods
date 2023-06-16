@@ -1,21 +1,42 @@
-<nav>
+<mat-toolbar>
     <div class="header">
         <a routerLink="" class="logo">
+            <img class="logo-image" src="../../../assets/logo.png" />
             AD's Burguers
         </a>
         <div class="header-wrapper">
             <div class="desktop">
                 <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Início</a>
-                <a routerLink="menu" routerLinkActive="active-link">Contato</a>
-                <a *ngIf="isLoggedIn()" routerLink="cart" routerLinkActive="active-link">Carrinho</a>
-                <a *ngIf="!isLoggedIn()" routerLink="login" routerLinkActive="active-link" >Login</a>
-                <button mat-raised-button class="accountBtn" color="primary" *ngIf="isLoggedIn()" (click)="logOut()">Logout</button>
+                <a routerLink="contact" routerLinkActive="active-link">Contato</a>
+                <button mat-flat-button color="primary" class="accountBtn" *ngIf="!isLoggedIn()" routerLink="login"
+                    routerLinkActive="active-link">Login</button>
+                <button mat-flat-button class="accountBtn" color="primary" *ngIf="isLoggedIn()"
+                    (click)="logOut()">Logout
+                </button>
+                <button *ngIf="isLoggedIn()" routerLink="cart" routerLinkActive="active-link" mat-icon-button>
+                    <mat-icon>
+                        <img  class="cart-icon"
+                            src="../../../assets/images/cart-svgrepo-com.svg" />
+                    </mat-icon>
+                </button>
             </div>
             <div class="mobile">
-                <button mat-icon-button>
+                <button (click)="toogleSideNav()" mat-icon-button class="header-icon">
                     <mat-icon>menu</mat-icon>
                 </button>
             </div>
         </div>
     </div>
-</nav>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="isSideNavOpen" mode="side">
+        <ul class="sidenav-items">
+            <li routerLink="">Início</li>
+            <li routerLink="contact">Contato</li>
+            <button mat-flat-button color="primary" class="accountBtn" *ngIf="!isLoggedIn()" routerLink="login"
+                routerLinkActive="active-link">Login</button>
+            <button mat-flat-button color="primary" (click)="logOut()" *ngIf="isLoggedIn()"
+                class="accountBtn">Logout</button>
+        </ul>
+    </mat-sidenav>
+</mat-sidenav-container>

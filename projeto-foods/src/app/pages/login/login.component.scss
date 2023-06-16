@@ -39,8 +39,7 @@
 
             .login-title {
                 color: white;
-                font-weight: bold;
-                font-family: var(--form--title-font);
+                font-family: var(--title-font);
                 text-align: center;
                 font-size: 1.3rem;
             }
@@ -144,7 +143,7 @@
 .forgot-pass {
     font-size: 14px;
     color: white;
-
+    font-family: var(--body-font);
     button {
         color: var(--tertiary-color);
         text-decoration: underline;
@@ -201,8 +200,7 @@
                 font-family: var(--body-font);
             }
             h1 {
-                font-weight: bold;
-                font-family: var(--form--title-font);
+                font-family: var(--title-font);
                 font-size: 2.5rem;
                 text-align: center;
 
@@ -284,3 +282,4 @@
             transition: all 200ms ease-in-out;
         }
 }
+

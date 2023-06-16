@@ -41,12 +41,15 @@
                 <p class="modal-title-info">Digite o seu e-mail cadastrado para que possamos enviar o código de recuperação</p>
             </div>
             <div class="modal-content">
+                
                 <div class="modal-input-wrapper">
                     <input class="modal-control" placeholder="." [(ngModel)]="resetPasswordEmail" (ngModelChange)="checkEmailValue($event)" name="email" type="email" required>
                     <label for="Email">Email</label>
                 </div>
+
                 <small *ngIf="!isValidEmail"
                 class="text-error">Email inválido.</small>
+                
                 <button mat-raised-button color="primary" (click)="confirmToSend()" class="modal-btn-submit" type="button">Enviar</button>
             </div>
         </div>
