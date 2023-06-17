@@ -17,7 +17,10 @@
             </div>
         </div>
         <div class="order-menus">
-            <button class="order-menu-title" (click)="toogleBurguerContentVisible()">Burguers</button>
+            <div class="order-name-menu">
+                <button class="order-menu-title" (click)="toogleBurguerContentVisible()">Burguers</button>
+                <img [ngClass]="{'active': burguerContentVisible}" class="order-svg" src="../../../assets/images/down-arrow.svg" />
+            </div>
             <div class="order-menu-grid" [ngClass]="{'visible':burguerContentVisible}" *ngIf="burguerContentVisible">
                 <div *ngFor="let burguer of burguer" class="order-menu" [hidden]="!burguerContentVisible">
                     <img class="order-image" src={{burguer.image}}>
@@ -26,7 +29,7 @@
                         <p>Ingredientes: {{burguer.ingredients}}</p>
                         <p>R${{burguer.price}}</p>
                     </div>
-                    <button mat-raised-button color="primary" class="add-to-cart">
+                    <button *ngIf="isLoggedIn()" mat-raised-button color="primary" class="add-to-cart">
                         Adicionar
                     </button>
                 </div>
@@ -39,7 +42,10 @@
     </section>
     <section class="container">
         <div class="order-menus">
-            <button class="order-menu-title" (click)="toogleDrinkContentVisible()">Drinks</button>
+            <div class="order-name-menu">
+                <button class="order-menu-title" (click)="toogleDrinkContentVisible()">Drinks</button>
+                <img [ngClass]="{'active': drinkContentVisible}" class="order-svg" src="../../../assets/images/down-arrow.svg" />
+            </div>
             <div class="order-menu-grid" [ngClass]="{'visible':drinkContentVisible}" *ngIf="drinkContentVisible">
                 <div *ngFor="let drink of drink" class="order-menu" [hidden]="!drinkContentVisible">
                     <img class="order-image" src={{drink.image}}>
@@ -47,7 +53,7 @@
                         <p class="order-info-title">{{drink.drinkName}}</p>
                         <p class="price">R${{drink.price}}</p>
                     </div>
-                    <button mat-raised-button color="primary" class="add-to-cart">
+                    <button *ngIf="isLoggedIn()" mat-raised-button color="primary" class="add-to-cart">
                         Adicionar
                     </button>
                 </div>
@@ -55,8 +61,19 @@
         </div>
         <div class="where-to-find">
             <div class="where-to-find-info">
-                <h1>Onde nós estamos localizados</h1>
-                <p>...</p>
+                <h1>Visite nossas lojas físicas</h1>
+                <div class="where-to-find-card">
+                    <p>Rua Pedro Álvares Cabral, 1500 - São Paulo, SP - Brasil.</p>
+                    <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
+                </div>
+                <div class="where-to-find-card">
+                    <p>Rua Pedro Álvares Cabral, 1500 - Belo Horizonte, MG - Brasil.</p>
+                    <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
+                </div>
+                <div class="where-to-find-card">
+                    <p>Rua Pedro Álvares Cabral, 1500 - Rio de Janeiro, RJ - Brasil.</p>
+                    <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
+                </div>
             </div>
             <div class="where-to-find-image">
                 <img src="../../../assets/images/where-to-find.jpg" alt="Onde nos encontramos">

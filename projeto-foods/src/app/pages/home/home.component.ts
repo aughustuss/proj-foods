@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { OrderStepsService } from 'src/app/services/ordersteps/order-steps.service';
 import { BurguerService } from 'src/app/services/burguers/burguer.service';
 import { DrinksService } from 'src/app/services/drinks/drinks.service';
-import {MatButtonModule} from '@angular/material/button'
-import {MatIconModule} from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 import { CommonModule } from '@angular/common';
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +14,12 @@ import { CommonModule } from '@angular/common';
   imports: [MatButtonModule, MatIconModule, CommonModule],
 })
 export class HomeComponent {
-  constructor(private orderSteps: OrderStepsService, private burguers: BurguerService, private drinks: DrinksService) { }
+  constructor(
+    private orderSteps: OrderStepsService,
+    private burguers: BurguerService,
+    private drinks: DrinksService,
+    private auth: AuthService
+  ) { }
 
   orderStep: any;
   burguer: any;
@@ -26,10 +32,14 @@ export class HomeComponent {
     this.burguer = this.burguers.Burguers;
     this.drink = this.drinks.Drinks;
   };
-  toogleBurguerContentVisible(){
+
+  isLoggedIn(): boolean {
+    return this.auth.isLoggedIn();
+  }
+  toogleBurguerContentVisible() {
     this.burguerContentVisible = !this.burguerContentVisible;
   }
-  toogleDrinkContentVisible(){
+  toogleDrinkContentVisible() {
     this.drinkContentVisible = !this.drinkContentVisible;
   }
 
