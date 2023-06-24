@@ -23,10 +23,10 @@ import { ResetComponent } from './pages/reset/reset.component';
     FooterComponent,
     MenuComponent,
     ContactComponent,
-    CartComponent,
     ResetComponent,
   ],
   imports: [
+    CartComponent,
     SignupComponent,
     LoginComponent,
     HomeComponent,
