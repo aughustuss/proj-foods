@@ -1,28 +1,44 @@
 <main class="cart-container">
     <section class="cart-section">
         <div class="section-item">
-            <div class="item-wrapper">
-                <div class="item-image">
-                    <img src="" alt="">
-                </div>
-                <div class="item-infos">
-                    <div class="item-details">
-                        <p>Nome</p>
-                        <p>Preço</p>
+            <div class="section-wrapper">
+                <p class="cart-title" *ngIf="items.length > 0">Seu carrinho de compras</p>
+                <div class="item-container">
+                    <div *ngFor="let item of items" class="item-wrapper">
+                        <div class="item-image">
+                            <img src={{item.image}} alt="">
+                        </div>
+                        <div class="item-infos">
+                            <div class="item-details">
+                                <p class="item-title">{{item.name}} </p>
+                                <p>R${{item.price}}</p>
+                                <p>Quantidade: {{item.amount}}</p>
+                            </div>
+                            <button (click)="removeFromCart(item)" mat-flat-button color="primary">Excluir</button>
+                        </div>
                     </div>
-                    <button mat-flat-button color="primary" >Excluir</button>
                 </div>
+            </div>
+            <div class="clear-cart">
+                <button mat-flat-button color="primary">Esvaziar carrinho</button>
+            </div>
+            <div *ngIf="items.length === 0" class="no-items">
+                Seu carrinho ainda está vazio...
             </div>
         </div>
     </section>
     <aside class="cart-sidebar">
-        <h1 class="sidebar-title">Total das compras</h1>
-        <div>
-
-        </div>
+        <h1>Total das compras</h1>
+        <p>
+            R${{total}}
+        </p>
+        <h2>Selecione a localização da hamburgueria da sua cidade</h2>
         <div class="sidebar-buttons">
+            <select class="sidebar-locations">
+                <option *ngFor="let location of location">{{location.location}}</option>
+            </select>
             <button mat-flat-button color="primary">Finalizar Pedido</button>
-            <button mat-stroked-button color="primary" >Comprar mais</button>
-        </div> 
+            <button routerLink="/home" mat-stroked-button color="primary">Comprar mais</button>
+        </div>
     </aside>
 </main>

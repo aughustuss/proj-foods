@@ -9,34 +9,34 @@ export class DrinksService {
 
   Drinks = [
     {
-      drinkName: 'Antártica Original',
+      name: 'Antártica Original',
       image: '../../../assets/images/drinks/drink1.png',
-      price: "14,90",
+      price: 14.90,
     },
     {
-      drinkName: 'Heineken',
+      name: 'Heineken',
       image: '../../../assets/images/drinks/drink2.jpg',
-      price: "18,90",
+      price: 18.90,
     },
     {
-      drinkName: 'Budweiser',
+      name: 'Budweiser',
       image: '../../../assets/images/drinks/drink4.jpg',
-      price: "18,90",
+      price: 18.90,
     },
     {
-      drinkName: 'Corona Extra',
+      name: 'Corona Extra',
       image: '../../../assets/images/drinks/drink5.jpg',
-      price: "19,90",
+      price: 19.90,
     },
     {
-      drinkName: 'Jack Daniels',
+      name: 'Jack Daniels',
       image: '../../../assets/images/drinks/drink6.jpg',
-      price: "12,90 - Dose",
+      price: 12.90,
     },
     {
-      drinkName: 'Stella Artois',
+      name: 'Stella Artois',
       image: '../../../assets/images/drinks/drink7.jpg',
-      price: "19,90",
+      price: 19.90,
     }
   ]
 }

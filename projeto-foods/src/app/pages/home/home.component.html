@@ -19,17 +19,18 @@
         <div class="order-menus">
             <div class="order-name-menu">
                 <button class="order-menu-title" (click)="toogleBurguerContentVisible()">Burguers</button>
-                <img [ngClass]="{'active': burguerContentVisible}" class="order-svg" src="../../../assets/images/down-arrow.svg" />
+                <img [ngClass]="{'active': burguerContentVisible}" class="order-svg"
+                    src="../../../assets/images/down-arrow.svg" />
             </div>
             <div class="order-menu-grid" [ngClass]="{'visible':burguerContentVisible}" *ngIf="burguerContentVisible">
                 <div *ngFor="let burguer of burguer" class="order-menu" [hidden]="!burguerContentVisible">
                     <img class="order-image" src={{burguer.image}}>
                     <div class="order-info">
-                        <p class="order-info-title">{{burguer.burguerName}}</p>
-                        <p>Ingredientes: {{burguer.ingredients}}</p>
-                        <p>R${{burguer.price}}</p>
+                        <p class="order-info-title">{{burguer.name}}</p>
+                        <p class="order-info-ingredients">Ingredientes: {{burguer.ingredients}}</p>
+                        <p class="order-info-price">R${{burguer.price}}</p>
                     </div>
-                    <button *ngIf="isLoggedIn()" mat-raised-button color="primary" class="add-to-cart">
+                    <button (click)="addToCart(burguer)" mat-raised-button color="primary" class="add-to-cart">
                         Adicionar
                     </button>
                 </div>
@@ -44,16 +45,18 @@
         <div class="order-menus">
             <div class="order-name-menu">
                 <button class="order-menu-title" (click)="toogleDrinkContentVisible()">Drinks</button>
-                <img [ngClass]="{'active': drinkContentVisible}" class="order-svg" src="../../../assets/images/down-arrow.svg" />
+                <img [ngClass]="{'active': drinkContentVisible}" class="order-svg"
+                    src="../../../assets/images/down-arrow.svg" />
             </div>
             <div class="order-menu-grid" [ngClass]="{'visible':drinkContentVisible}" *ngIf="drinkContentVisible">
                 <div *ngFor="let drink of drink" class="order-menu" [hidden]="!drinkContentVisible">
                     <img class="order-image" src={{drink.image}}>
                     <div class="order-info">
-                        <p class="order-info-title">{{drink.drinkName}}</p>
-                        <p class="price">R${{drink.price}}</p>
+                        <p class="order-info-title">{{drink.name}}</p>
+                        <p class="order-info-price">R${{drink.price}}</p>
                     </div>
-                    <button *ngIf="isLoggedIn()" mat-raised-button color="primary" class="add-to-cart">
+                    <button (click)="addToCart(drink)" *ngIf="!isLoggedIn()" mat-raised-button color="primary"
+                        class="add-to-cart">
                         Adicionar
                     </button>
                 </div>
@@ -62,17 +65,11 @@
         <div class="where-to-find">
             <div class="where-to-find-info">
                 <h1>Visite nossas lojas físicas</h1>
-                <div class="where-to-find-card">
-                    <p>Rua Pedro Álvares Cabral, 1500 - São Paulo, SP - Brasil.</p>
-                    <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
-                </div>
-                <div class="where-to-find-card">
-                    <p>Rua Pedro Álvares Cabral, 1500 - Belo Horizonte, MG - Brasil.</p>
-                    <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
-                </div>
-                <div class="where-to-find-card">
-                    <p>Rua Pedro Álvares Cabral, 1500 - Rio de Janeiro, RJ - Brasil.</p>
-                    <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
+                <div class="where-to-find-grid">
+                    <div *ngFor="let location of location" class="where-to-find-card">
+                        <p>{{location.location}}</p>
+                        <button mat-flat-button color="primary" class="how-to-go">Como chegar</button>
+                    </div>
                 </div>
             </div>
             <div class="where-to-find-image">

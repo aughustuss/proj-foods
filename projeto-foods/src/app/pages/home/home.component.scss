@@ -35,14 +35,15 @@ button {
     gap: 10px;
     max-width: 300px;
 
-    @media screen and (min-width: 640px){
+    @media screen and (min-width: 640px) {
         max-width: 400px;
     }
+
     @media screen and (min-width: 768px) {
         max-width: 500px;
     }
 
-    @media screen and (min-width: 1024px){
+    @media screen and (min-width: 1024px) {
         max-width: 800px;
     }
 
@@ -52,11 +53,12 @@ button {
         letter-spacing: 3px;
         line-height: 2.5rem;
 
-        @media screen and (min-width: 420px){
+        @media screen and (min-width: 420px) {
             font-size: 2.5rem;
             line-height: 3rem;
 
         }
+
         @media screen and (min-width: 748px) {
             font-size: 3rem;
             line-height: 4rem;
@@ -129,9 +131,18 @@ button {
     .order-step-title {
         font-family: var(--title-font);
         text-decoration: underline;
-        font-size: 45px;
         font-weight: bold;
         text-align: center;
+        font-size: 2rem;
+        @media screen and (min-width: 640px){
+            font-size: 2.5rem;
+        }
+        @media screen and (min-width: 768px){
+            font-size: 3rem;
+        }
+        @media screen and (min-width: 1024px){
+            font-size: 3.5rem;
+        }
     }
 }
 
@@ -143,14 +154,16 @@ button {
     border-radius: 3px;
     display: flex;
     flex-direction: column;
-    .order-name-menu{
+
+    .order-name-menu {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         color: white;
         position: relative;
-        .order-svg{
+
+        .order-svg {
             height: 40px;
             width: 40px;
             color: white;
@@ -159,7 +172,8 @@ button {
             transform: rotate(180deg);
             transition: all 300ms;
         }
-        .order-svg.active{
+
+        .order-svg.active {
             height: 40px;
             width: 40px;
             color: white;
@@ -168,19 +182,19 @@ button {
             transform: rotate(0deg);
             transition: all 300ms;
         }
-    
+
         .order-menu-title {
             color: white;
             font-family: var(--title-font);
-            font-size: 3rem;
+            font-size: 2rem;
             text-align: center;
-    
+
             @media screen and (min-width: 640px) {
-                font-size: 4rem;
+                font-size: 3.5rem;
             }
-    
+
             ;
-    
+
             @media screen and (min-width: 768px) {
                 font-size: 5rem;
             }
@@ -195,7 +209,7 @@ button {
         gap: 10px;
         transition: all 300ms ease;
         opacity: 1;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
 
         @media screen and (min-width: 1024px) {
             grid-template-columns: repeat(2, 1fr);
@@ -221,7 +235,7 @@ button {
         justify-content: space-between;
         padding: 5px;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1024px) {
             flex-direction: row;
         }
     }
@@ -232,7 +246,7 @@ button {
         height: 110px;
         width: 100%;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1024) {
             width: 120px;
             height: 120px;
         }
@@ -253,10 +267,43 @@ button {
         font-size: 14px;
 
         .order-info-title {
-            font-size: 2rem;
             font-family: var(--title-font);
             text-align: center;
-            align-self: center
+            align-self: center;
+            font-size: 1rem;
+
+            @media screen and (min-width: 640px) {
+                font-size: 1.5rem;
+            }
+
+            @media screen and (min-width: 768px) {
+                font-size: 2rem;
+            }
+        }
+
+        .order-info-ingredients {
+            font-size: 12px;
+
+            @media screen and (min-width: 640px) {
+                font-size: 13px;
+            }
+
+            @media screen and (min-width: 768px) {
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                font-size: 15px;
+            }
+        }
+
+        .order-info-price {
+            font-size: 14px;
+            color: var(--tertiary-color);
+
+            @media screen and (min-width: 640px) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -328,13 +375,15 @@ button {
     justify-content: center;
     color: white;
     height: auto;
-    @media screen and (min-width: 768px) {
+    background-color: red;
+
+    @media screen and (min-width: 1024px) {
         flex-direction: row;
     }
-    
+
     .where-to-find-info {
         padding: 15px;
-        flex: 1 1%;
+        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -343,41 +392,69 @@ button {
 
         h1 {
             letter-spacing: 2px;
-            font-size: 3rem;
             font-family: var(--title-font);
             text-align: center;
+            align-self: center;
+            font-size: 2rem;
 
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: 640px) {
+                font-size: 3rem;
+            }
+
+            @media screen and (min-width: 1024px) {
+                font-size: 4rem;
                 text-align: start;
             }
         }
 
-        .where-to-find-card{
-            display: flex;
-            flex-direction: column;
-            width: 70%;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            background-color: rgb(27, 27, 27);
-            border-radius: 3px;
-            p{
-                font-family: var(--title-font);
-                font-size: 1.3rem;
+        .where-to-find-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+            @media screen and (min-width: 440px){
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .how-to-go{
-                font-family: var(--body-font);
+            @media screen and (min-width: 1024px){
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .where-to-find-card {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+                background-color: rgb(27, 27, 27);
+                border-radius: 3px;
                 width: 100%;
-                font-weight: bold;
-                font-size: 14px;
+                flex-wrap: wrap;
+
+                @media screen and (min-width: 1024) {
+                    width: 70%;
+                }
+
+                p {
+                    font-family: var(--title-font);
+                    font-size: 1rem;
+                    font-weight: 100;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .how-to-go {
+                    font-family: var(--body-font);
+                    width: 100%;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
             }
         }
     }
 
     .where-to-find-image {
-        flex: 1 1%;
+        flex: 1;
 
         img {
             width: 100%;
