@@ -76,6 +76,7 @@ button {
     .banner-subtitle {
         font-family: var(--body-font);
         font-size: 1rem;
+        font-weight: 100;
     }
 
     .order-button {
@@ -84,10 +85,7 @@ button {
         border: none;
         padding: 10px;
         border-radius: 2px;
-        color: var(--main-color);
-        font-weight: bold;
         font-family: var(--body-font);
-
     }
 }
 
@@ -134,13 +132,16 @@ button {
         font-weight: bold;
         text-align: center;
         font-size: 2rem;
-        @media screen and (min-width: 640px){
+
+        @media screen and (min-width: 640px) {
             font-size: 2.5rem;
         }
-        @media screen and (min-width: 768px){
+
+        @media screen and (min-width: 768px) {
             font-size: 3rem;
         }
-        @media screen and (min-width: 1024px){
+
+        @media screen and (min-width: 1024px) {
             font-size: 3.5rem;
         }
     }
@@ -186,17 +187,17 @@ button {
         .order-menu-title {
             color: white;
             font-family: var(--title-font);
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-align: center;
 
             @media screen and (min-width: 640px) {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
 
             ;
 
             @media screen and (min-width: 768px) {
-                font-size: 5rem;
+                font-size: 4.5rem;
             }
         }
     }
@@ -246,8 +247,8 @@ button {
         height: 110px;
         width: 100%;
 
-        @media screen and (min-width: 1024) {
-            width: 120px;
+        @media screen and (min-width: 1024px) {
+            width: 140px;
             height: 120px;
         }
 
@@ -283,17 +284,14 @@ button {
 
         .order-info-ingredients {
             font-size: 12px;
-
+            font-weight: 100;
+            font-family: var(--body-font);
             @media screen and (min-width: 640px) {
-                font-size: 13px;
+                font-size: 15px;
             }
 
             @media screen and (min-width: 768px) {
-                font-size: 14px;
-            }
-
-            @media screen and (min-width: 1024px) {
-                font-size: 15px;
+                font-size: 17px;
             }
         }
 
@@ -313,8 +311,6 @@ button {
 .add-to-cart {
     padding: 10px 15px;
     border-radius: 3px;
-    color: var(--main-color);
-    font-weight: bold;
     font-family: var(--body-font);
     background-color: var(--tertiary-color);
     width: 100%;
@@ -375,7 +371,6 @@ button {
     justify-content: center;
     color: white;
     height: auto;
-    background-color: red;
 
     @media screen and (min-width: 1024px) {
         flex-direction: row;
@@ -395,14 +390,18 @@ button {
             font-family: var(--title-font);
             text-align: center;
             align-self: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
 
             @media screen and (min-width: 640px) {
                 font-size: 3rem;
+            };
+
+            @media screen and (min-width: 768px) {
+                font-size: 4.5rem;
             }
 
             @media screen and (min-width: 1024px) {
-                font-size: 4rem;
                 text-align: start;
             }
         }
@@ -411,12 +410,15 @@ button {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 10px;
-            @media screen and (min-width: 440px){
+
+            @media screen and (min-width: 440px) {
                 grid-template-columns: repeat(2, 1fr);
             }
-            @media screen and (min-width: 1024px){
+
+            @media screen and (min-width: 1024px) {
                 grid-template-columns: repeat(1, 1fr);
             }
+
             .where-to-find-card {
                 display: flex;
                 flex-direction: column;
@@ -434,7 +436,7 @@ button {
                 }
 
                 p {
-                    font-family: var(--title-font);
+                    font-family: var(--body-font);
                     font-size: 1rem;
                     font-weight: 100;
 
@@ -446,8 +448,10 @@ button {
                 .how-to-go {
                     font-family: var(--body-font);
                     width: 100%;
-                    font-weight: bold;
-                    font-size: 14px;
+                    font-size: 12px;
+                    @media screen and (min-width: 768px){
+                        font-size: 15px;
+                    }
                 }
             }
         }

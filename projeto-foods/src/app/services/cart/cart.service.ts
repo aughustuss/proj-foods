@@ -48,6 +48,11 @@ export class CartService {
 
   itemInCart(product: any): boolean{
     return this.addedProducts.findIndex((i: any) => i.id === product.id) > -1;
+  };
+
+  clearCart(products: any){
+    this.addedProducts = [];
+    window.sessionStorage.removeItem('produtos');
   }
 
 }

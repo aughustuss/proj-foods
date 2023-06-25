@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="clear-cart">
-                <button mat-flat-button color="primary">Esvaziar carrinho</button>
+                <button (click)="clearCart(items)" mat-flat-button color="primary">Esvaziar carrinho</button>
             </div>
             <div *ngIf="items.length === 0" class="no-items">
                 Seu carrinho ainda está vazio...
@@ -37,7 +37,7 @@
             <select class="sidebar-locations">
                 <option *ngFor="let location of location">{{location.location}}</option>
             </select>
-            <button mat-flat-button color="primary">Finalizar Pedido</button>
+            <button class="finish-order" mat-flat-button color="primary">Finalizar Pedido</button>
             <button routerLink="/home" mat-stroked-button color="primary">Comprar mais</button>
         </div>
     </aside>

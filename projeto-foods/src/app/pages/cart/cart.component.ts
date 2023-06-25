@@ -35,7 +35,12 @@ export class CartComponent implements OnInit{
     this.cart.removeItem(product);
     this.items = this.cart.getItems();
     this.getTotal();
-  }
+  };
 
+  clearCart(products: any){
+    this.cart.clearCart(products);
+    this.items = this.cart.getItems();
+    this.getTotal();
+  }
 
 }

@@ -7,14 +7,14 @@
     flex-direction: column;
     gap: 10px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         flex-direction: row;
     }
 
     .cart-section {
         max-width: 100%;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1024px) {
             max-width: 75%;
         }
 
@@ -31,7 +31,7 @@
         .section-item {
             width: 100%;
 
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: 1024) {
                 width: 95%;
             }
 
@@ -44,23 +44,20 @@
 
             .clear-cart {
                 button {
-                    font-size: 10px;
-                    font-weight: bold;
                     font-family: var(--body-font);
-
+                    font-size: 12px;
                     @media screen and (min-width: 640px) {
                         min-width: 70px;
-                        font-size: 11px;
+                        font-size: 13px;
                     }
 
                     @media screen and (min-width: 768px) {
                         min-width: 95px;
-                        font-size: 12px;
+                        font-size: 15px;
                     }
 
                     @media screen and (min-width: 1024px) {
                         min-width: 120px;
-                        font-size: 14px;
                     }
                 }
             }
@@ -73,19 +70,13 @@
                     font-weight: 100;
                     text-align: center;
                     color: var(--tertiary-color);
-                    font-size: 20px;
+                    font-size: 1.5rem;
+                    text-align: center;
 
                     @media screen and (min-width: 640px) {
-                        font-size: 24px;
+                        font-size: 3rem;
                     }
 
-                    @media screen and (min-width: 768px) {
-                        font-size: 28px;
-                    }
-
-                    @media screen and (min-width: 1024px) {
-                        font-size: 32px;
-                    }
                 }
 
                 .item-container {
@@ -100,33 +91,35 @@
                         display: flex;
                         flex-direction: row;
                         align-items: center;
+                        justify-content: center;
                         margin-top: 10px;
                         width: 100%;
                         gap: 10px;
-                        min-height: 60px;
+                        height: 60px;
 
                         @media screen and (min-width: 640px) {
                             min-height: 80px;
                         }
 
                         @media screen and (min-width: 768px) {
-                            min-height: 100px;
+                            height: 100px;
                         }
 
                         .item-image {
+                            height: 100%;
                             img {
                                 object-fit: cover;
                                 border-radius: 5px;
-                                height: 50px;
+                                height: 100%;
                                 width: 50px;
 
                                 @media screen and (min-width: 640px) {
-                                    height: 60px;
+                                    height: 100%;
                                     width: 60px;
                                 }
 
                                 @media screen and (min-width: 640px) {
-                                    height: 70px;
+                                    height: 100%;
                                     width: 70px;
                                 }
                             }
@@ -144,55 +137,53 @@
                                 display: flex;
                                 flex-direction: column;
                                 font-family: var(--body-font);
-                                font-size: 10px;
+                                font-size: 12px;
 
                                 @media screen and (min-width: 640px) {
-                                    font-size: 11px;
+                                    font-size: 13px;
                                 }
 
-                                @media screen and (min-width: 640px) {
-                                    font-size: 12px;
+                                @media screen and (min-width: 768px) {
+                                    font-size: 15px;
                                 }
 
-                                @media screen and (min-width: 640px) {
-                                    font-size: 14px;
+                                @media screen and (min-width: 1024px) {
+                                    font-size: 17px;
                                 }
 
                                 .item-title {
                                     font-weight: 100;
                                     color: var(--tertiary-color);
                                     font-family: var(--title-font);
-                                    font-size: 12px;
+                                    font-size: 1rem;
 
                                     @media screen and (min-width: 640px) {
-                                        font-size: 14px;
+                                        font-size: 1.5rem;
                                     }
 
                                     @media screen and (min-width: 768px) {
-                                        font-size: 16px;
+                                        font-size: 2rem;
                                     }
                                 }
                             }
 
                             button {
                                 font-family: var(--body-font);
-                                font-weight: bold;
                                 min-width: 50px;
-                                font-size: 10px;
+                                font-size: 12px;
 
                                 @media screen and (min-width: 640px) {
                                     min-width: 70px;
-                                    font-size: 11px;
+                                    font-size: 13px;
                                 }
 
                                 @media screen and (min-width: 768px) {
                                     min-width: 95px;
-                                    font-size: 12px;
+                                    font-size: 15px;
                                 }
 
                                 @media screen and (min-width: 1024px) {
                                     min-width: 120px;
-                                    font-size: 14px;
                                 }
 
                             }
@@ -219,9 +210,9 @@
 
     .cart-sidebar {
         max-width: 100%;
-        max-height: 400px;
+        max-height: 480px;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1024px) {
             max-width: 25%;
         }
 
@@ -239,18 +230,19 @@
             font-family: var(--title-font);
             color: white;
             font-weight: 100;
-            font-size: 18px;
+            font-size: 20px;
 
             @media screen and (min-width: 640px) {
-                font-size: 22px;
+                font-size: 24px;
             }
 
             @media screen and (min-width: 768px) {
-                font-size: 26px;
+                font-size: 28px;
             }
 
             @media screen and (min-width: 1024px) {
-                font-size: 30px;
+                font-size: 32px;
+                text-align: start;
             }
         }
 
@@ -259,18 +251,18 @@
             font-family: var(--title-font);
             color: white;
             font-weight: 100;
-            font-size: 12px;
+            font-size: 16px;
 
             @media screen and (min-width: 640px) {
-                font-size: 16px;
-            }
-
-            @media screen and (min-width: 768px) {
                 font-size: 20px;
             }
 
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 768px) {
                 font-size: 24px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                text-align: start;
             }
         }
 
@@ -278,7 +270,13 @@
             color: var(--tertiary-color);
             font-weight: bold;
             font-family: var(--body-font);
-            font-size: 16px;
+            font-size: 18px;
+            text-decoration: underline;
+            text-align: center;
+            @media screen and (min-width: 768px){
+                text-align: start;
+                font-size: 24px;
+            }
         }
 
         .sidebar-locations {
@@ -288,25 +286,24 @@
             color: var(--tertiary-color);
             border-radius: 5px;
             width: 100%;
-            text-align: center;
             border: 0.01rem solid rgba(255, 255, 255, 0.12);
-            font-weight: bold;
-            font-size: 10px;
+            font-size: 12px;
+            text-align: center;
 
             @media screen and (min-width: 640px) {
                 min-width: 70px;
-                font-size: 11px;
+                font-size: 13px;
             }
 
             @media screen and (min-width: 768px) {
                 min-width: 95px;
-                font-size: 12px;
+                font-size: 15px;
             }
 
             @media screen and (min-width: 1024px) {
                 min-width: 120px;
-                font-size: 14px;
             }
+
             option {
                 padding: 15px;
                 border-radius: 0px;
@@ -324,23 +321,20 @@
 
             button {
                 width: 100%;
-                font-weight: bold;
                 font-family: var(--body-font);
-                font-size: 10px;
-
+                font-size: 12px;
                 @media screen and (min-width: 640px) {
                     min-width: 70px;
-                    font-size: 11px;
+                    font-size: 13px;
                 }
 
                 @media screen and (min-width: 768px) {
                     min-width: 95px;
-                    font-size: 12px;
+                    font-size: 15px;
                 }
 
                 @media screen and (min-width: 1024px) {
                     min-width: 120px;
-                    font-size: 14px;
                 }
             }
         }

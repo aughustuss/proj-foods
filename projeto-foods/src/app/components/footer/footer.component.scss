@@ -37,6 +37,7 @@
             h1{
                 text-align: center;
                 font-family: var(--title-font);
+                color: var(--secondary-color-hover);
                 font-size: 1rem;
                 @media screen and (min-width: 640px){
                     font-size: 1.5rem;
@@ -50,6 +51,7 @@
                 align-items: center;
                 font-family: var(--body-font);
                 text-align: center;
+                font-weight: 100;
             }
         }
     }
