@@ -8,29 +8,44 @@
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required', 'FirstName')">
                     <div class="signup-input-wrapper">
-                        <input placeholder="Primeiro nome" class="input-control" formControlName="FirstName" type="text" required>
+                        <input placeholder="Primeiro nome" class="input-control" formControlName="FirstName" type="text"
+                            required>
                         <label for="FirstName">Primeiro Nome</label>
                     </div>
                     <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName')"
                         class="text-error">Preencha o seu nome.</small>
+                    <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('minLength','FirstName')"
+                        class="text-error">Mínimo de 3 caractéres.</small>
+                    <small *ngIf="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('maxLength','FirstName')"
+                        class="text-error">Máximo de 20 caractéres.</small>
                 </div>
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required', 'LastName')">
                     <div class="signup-input-wrapper">
-                        <input placeholder="Último nome" class="input-control" formControlName="LastName" type="text" required>
+                        <input placeholder="Último nome" class="input-control" formControlName="LastName" type="text"
+                            required>
                         <label for="LastName">Sobrenome</label>
                     </div>
                     <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName')"
                         class="text-error">Preencha o seu sobrenome.</small>
+                    <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('minLength','LastName')"
+                        class="text-error">Mínimo de 3 caractéres.</small>
+                    <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('maxLength','LastName')"
+                        class="text-error">Máximo de 20 caractéres.</small>
                 </div>
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required', 'UserName')">
                     <div class="signup-input-wrapper">
-                        <input placeholder="Nome de usuário" class="input-control" formControlName="UserName" type="text" required>
+                        <input placeholder="Nome de usuário" class="input-control" formControlName="UserName"
+                            type="text" required>
                         <label for="UserName">Nome de usuário</label>
                     </div>
                     <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required','UserName')"
                         class="text-error">Preencha o seu nome de usuário.</small>
+                    <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('minLength','UserName')"
+                        class="text-error">Mínimo de 3 caractéres.</small>
+                    <small *ngIf="signUpForm.controls['UserName'].dirty && signUpForm.hasError('maxLength','UserName')"
+                        class="text-error">Máximo de 20 caractéres.</small>
                 </div>
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
@@ -40,15 +55,21 @@
                     </div>
                     <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')"
                         class="text-error">Preencha o seu email.</small>
+                    <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('pattern','Email')"
+                        class="text-error">Email inválido.</small>
                 </div>
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required', 'Email')">
                     <div class="signup-input-wrapper">
-                        <input placeholder="Senha" class="input-control" formControlName="Password" type="password" required>
+                        <input placeholder="Senha" class="input-control" formControlName="Password" type="password"
+                            required>
                         <label for="Password">Senha</label>
                     </div>
                     <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')"
                         class="text-error">Preencha a sua senha.</small>
+                    <small *ngIf="signUpForm.controls['Password'].dirty && signUpForm.hasError('pattern', 'Password')"
+                        class="text-error">Sua senha deve possuir 8 caractéres, 1 letra maiúscula, 1 minúscula, 1
+                        caracter especial e 1 número.</small>
                 </div>
                 <button mat-raised-button color="primary" class="signup-submit" type="submit">Enviar</button>
             </form>
