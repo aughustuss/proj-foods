@@ -45,10 +45,9 @@
             .clear-cart {
                 button {
                     font-family: var(--body-font);
-                    font-size: 12px;
+                    font-size: 13px;
                     @media screen and (min-width: 640px) {
                         min-width: 70px;
-                        font-size: 13px;
                     }
 
                     @media screen and (min-width: 768px) {
@@ -80,10 +79,9 @@
                 }
 
                 .item-container {
-                    min-height: 50vh;
+                    min-height: 70vh;
                     max-height: 90vh;
                     overflow-y: auto;
-
                     .item-wrapper {
                         padding: 10px;
                         border-radius: 3px;
@@ -95,7 +93,7 @@
                         margin-top: 10px;
                         width: 100%;
                         gap: 10px;
-                        height: 60px;
+                        height: 70px;
 
                         @media screen and (min-width: 640px) {
                             min-height: 80px;
@@ -150,7 +148,27 @@
                                 @media screen and (min-width: 1024px) {
                                     font-size: 17px;
                                 }
-
+                                .amount-changer{
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 10px;
+                                    align-items: center;
+                                    button {
+                                        min-width: 2px;
+                                        color: black;
+                                        background-color: var(--tertiary-color);
+                                        height: 20px;
+                                        font-size: 12px;
+                                        @media screen and (min-width: 640px){
+                                            height: 25px;
+                                            font-size: 14px;
+                                        };
+                                        @media screen and (min-width: 768px){
+                                            height: 30px;
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
                                 .item-title {
                                     font-weight: 100;
                                     color: var(--tertiary-color);
@@ -170,11 +188,10 @@
                             button {
                                 font-family: var(--body-font);
                                 min-width: 50px;
-                                font-size: 12px;
+                                font-size: 13px;
 
                                 @media screen and (min-width: 640px) {
                                     min-width: 70px;
-                                    font-size: 13px;
                                 }
 
                                 @media screen and (min-width: 768px) {
@@ -210,7 +227,7 @@
 
     .cart-sidebar {
         max-width: 100%;
-        max-height: 480px;
+        max-height: 550px;
 
         @media screen and (min-width: 1024px) {
             max-width: 25%;
@@ -254,11 +271,11 @@
             font-size: 16px;
 
             @media screen and (min-width: 640px) {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             @media screen and (min-width: 768px) {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             @media screen and (min-width: 1024px) {
@@ -279,20 +296,45 @@
             }
         }
 
+        .deliver-method{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            button {
+                color: var(--tertiary-color);
+                font-family: var(--body-font);
+                font-size: 13px;
+                @media screen and (min-width: 768px){
+                    font-size: 15px;
+                }
+            }
+            button.active {
+                background-color: var(--tertiary-color);
+                color: black;
+            }
+        }
         .sidebar-locations {
             background-color: transparent;
-            padding: 9px;
+            padding: 10px;
             font-family: var(--body-font);
             color: var(--tertiary-color);
-            border-radius: 5px;
+            border-radius: 4px;
             width: 100%;
             border: 0.01rem solid rgba(255, 255, 255, 0.12);
-            font-size: 12px;
+            font-size: 13px;
             text-align: center;
-
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            select {
+                &:hover{
+                    background-color: red;
+                }
+            }
             @media screen and (min-width: 640px) {
                 min-width: 70px;
-                font-size: 13px;
             }
 
             @media screen and (min-width: 768px) {
@@ -318,14 +360,15 @@
             width: 100%;
             justify-content: space-between;
             gap: 10px;
-
+            .link-btn{
+                color: var(--tertiary-color);
+            }
             button {
                 width: 100%;
                 font-family: var(--body-font);
-                font-size: 12px;
+                font-size: 13px;
                 @media screen and (min-width: 640px) {
                     min-width: 70px;
-                    font-size: 13px;
                 }
 
                 @media screen and (min-width: 768px) {

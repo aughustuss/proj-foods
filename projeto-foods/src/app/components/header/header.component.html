@@ -6,18 +6,12 @@
         </a>
         <div class="header-wrapper">
             <div class="desktop">
-                <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Início</a>
-                <a routerLink="contact" routerLinkActive="active-link">Contato</a>
+                <a routerLink="home" routerLinkActive="active-link">Início</a>
+                <a *ngIf="isLoggedIn()" routerLink="cart" routerLinkActive="active-link" >Carrinho</a>
                 <button mat-flat-button color="primary" class="accountBtn" *ngIf="!isLoggedIn()" routerLink="login"
                     routerLinkActive="active-link">Login</button>
                 <button mat-flat-button class="accountBtn" color="primary" *ngIf="isLoggedIn()"
                     (click)="logOut()">Logout
-                </button>
-                <button *ngIf="isLoggedIn()" routerLink="cart" routerLinkActive="active-link" mat-icon-button>
-                    <mat-icon>
-                        <img  class="cart-icon"
-                            src="../../../assets/images/cart-svgrepo-com.svg" />
-                    </mat-icon>
                 </button>
             </div>
             <div class="mobile">
@@ -31,8 +25,8 @@
 <mat-sidenav-container>
     <mat-sidenav [(opened)]="isSideNavOpen" mode="side">
         <ul class="sidenav-items">
-            <li routerLink="">Início</li>
-            <li routerLink="contact">Contato</li>
+            <li *ngIf="isLoggedIn()" routerLink="">Início</li>
+            <li *ngIf="isLoggedIn()" routerLink="cart">Carrinho</li>
             <button mat-flat-button color="primary" class="accountBtn" *ngIf="!isLoggedIn()" routerLink="login"
                 routerLinkActive="active-link">Login</button>
             <button mat-flat-button color="primary" (click)="logOut()" *ngIf="isLoggedIn()"

@@ -64,13 +64,13 @@ export class LoginComponent implements OnInit {
           const userPayload = this.auth.decodifyToken();
           this.userStore.setFullNameForStore(userPayload.unique_name);
           this.userStore.setRoleForStore(userPayload.role);
-          this.snackBar.open("Login realizado com sucesso.", "Ok", {
+          this.snackBar.open("Login realizado com sucesso.", "OK", {
             duration: this.snackDuration * 1000,
           })
           this.route.navigate(['']);
         },
         error: (err) => {
-          this.loginErrorMessage = 'Email ou senha inválidos.';
+          this.loginErrorMessage = 'Email ou senha inválidos';
           console.log(err);
         }
       });

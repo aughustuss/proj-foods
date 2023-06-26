@@ -40,7 +40,7 @@
             .login-title {
                 color: white;
                 font-weight: bold;
-                font-family: var(--form--title-font);
+                font-family: var(--title-font);
                 text-align: center;
                 font-size: 1.3rem;
             }
@@ -71,6 +71,7 @@
                             padding: 0px 5px;
                             color: white;
                             z-index: 0;
+                            font-family: var(--body-font);
                         }
 
                         .input-control::placeholder{
@@ -127,7 +128,7 @@
 
 .text-error {
     color: rgb(207, 54, 54);
-    font-size: 10px;
+    font-size: 12px;
     font-family: var(--body-font);
     align-self: flex-start;
 }

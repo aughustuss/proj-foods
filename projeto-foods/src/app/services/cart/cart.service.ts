@@ -54,5 +54,39 @@ export class CartService {
     this.addedProducts = [];
     window.sessionStorage.removeItem('produtos');
   }
-
+  incrementProduct(product: any){
+    const cartItem = this.addedProducts.find((item: any) => {
+      return item.id === product.id;
+    });
+    if(cartItem){
+      const newCart = this.addedProducts.map((item: any) => {
+        if(item.id === product.id){
+          return {...product, amount: product.amount + 1};
+        } else {
+          return item;
+        };
+      })
+      this.addedProducts = newCart;
+      this.saveCart();
+    };
+  };
+  decrementProduct(product: any){
+    const cartItem = this.addedProducts.find((item) => {
+      return item.id === product.id;
+    });
+    if(cartItem){
+      const newCart = this.addedProducts.map((item) => {
+        if(item.id === product.id){
+          return {...product, amount: product.amount - 1};
+        } else {
+          return item;
+        };
+      });
+      this.addedProducts = newCart;
+      this.saveCart();
+    };
+    if(cartItem.amount < 2){
+      this.removeItem(product);
+    }
+  };
 }

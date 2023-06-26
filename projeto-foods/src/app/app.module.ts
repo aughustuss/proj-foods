@@ -9,7 +9,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './pages/menu/menu.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component'; 
@@ -22,10 +21,9 @@ import { ResetComponent } from './pages/reset/reset.component';
     AppComponent,
     FooterComponent,
     MenuComponent,
-    ContactComponent,
-    ResetComponent,
   ],
   imports: [
+    ResetComponent,
     CartComponent,
     SignupComponent,
     LoginComponent,

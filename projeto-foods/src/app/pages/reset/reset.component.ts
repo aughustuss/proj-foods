@@ -5,23 +5,29 @@ import { ConfirmPasswordValidator } from 'src/app/helpers/confirmpasswordvalidat
 import ValidateForm from 'src/app/helpers/validateform';
 import { ResetPasswordModel } from 'src/app/models/ResetPasswordModel';
 import { ResetpasswordService } from 'src/app/services/resetpassword/resetpassword.service';
-
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-reset',
   templateUrl: './reset.component.html',
-  styleUrls: ['./reset.component.scss']
+  styleUrls: ['./reset.component.scss'],
+  standalone: true,
+  imports: [MatSnackBarModule, CommonModule, FormsModule, ReactiveFormsModule],
 })
 export class ResetComponent {
   resetPasswordForm!: FormGroup;
   emailToReset!: string;
   emailToken!: string;
   resetPasswordObj = new ResetPasswordModel();
+  duration: number = 5;
 
   constructor(
     private fb: FormBuilder, 
     private activatedRoute: ActivatedRoute, 
     private resetService: ResetpasswordService,
-    private router: Router
+    private router: Router,
+    private snack: MatSnackBar,
     ) { }
 
   ngOnInit() {
@@ -35,7 +41,6 @@ export class ResetComponent {
       this.emailToReset = val['email'];
       let uriToken = val['code'];
       this.emailToken = uriToken.replace(/ /g,'+');
-      console.log(this.emailToReset, this.emailToken);
     })
   };
 
@@ -47,8 +52,11 @@ export class ResetComponent {
       this.resetPasswordObj.emailToken = this.emailToken;
       this.resetService.resetPassword(this.resetPasswordObj).subscribe({
         next: (res) => {
-          console.log(res);
-          alert('Redefinição de senha enviada com sucesso.');
+          this.snack.open("Senha redefinida com sucesso.", "OK", {
+            verticalPosition: 'bottom',
+            horizontalPosition: 'center',
+            duration: this.duration * 1000,
+          })
           this.router.navigate(['login']);
         }, error: (e) => {
           console.log(e)

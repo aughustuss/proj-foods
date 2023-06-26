@@ -72,6 +72,7 @@
                             padding: 0px 5px;
                             color: white;
                             z-index: 0;
+                            font-family: var(--body-font);
                         }
 
                         .input-control::placeholder{
@@ -125,7 +126,7 @@
 .have-account {
     align-self: flex-end;
     font-family: var(--body-font);
-    font-size: 10px;
+    font-size: 12px;
     color: white;
 
     .have-account-link {

@@ -11,8 +11,13 @@
                         <div class="item-infos">
                             <div class="item-details">
                                 <p class="item-title">{{item.name}} </p>
-                                <p>R${{item.price}}</p>
-                                <p>Quantidade: {{item.amount}}</p>
+                                <p>R${{item.price * item.amount.toFixed(2)}}</p>
+                                <div class="amount-changer">
+                                    <p>Quantidade</p>
+                                    <button (click)="incrementProduct(item)" mat-flat-button>+</button>
+                                    <p>{{item.amount}}</p>
+                                    <button (click)="decrementProduct(item)" mat-flat-button>-</button>
+                                </div>
                             </div>
                             <button (click)="removeFromCart(item)" mat-flat-button color="primary">Excluir</button>
                         </div>
@@ -20,7 +25,8 @@
                 </div>
             </div>
             <div class="clear-cart">
-                <button (click)="clearCart(items)" mat-flat-button color="primary">Esvaziar carrinho</button>
+                <button *ngIf="items.length > 0" (click)="clearCart(items)" mat-flat-button color="primary">Esvaziar
+                    carrinho</button>
             </div>
             <div *ngIf="items.length === 0" class="no-items">
                 Seu carrinho ainda está vazio...
@@ -32,13 +38,20 @@
         <p>
             R${{total}}
         </p>
-        <h2>Selecione a localização da hamburgueria da sua cidade</h2>
+        <div class="deliver-method">
+            <h2>Escolha como irá receber o seu pedido</h2>
+            <button (click)="setDeliveryMethod('Delivery')" [ngClass]="{'active':deliveryMethod}"
+                mat-stroked-button>Delivery</button>
+            <button (click)="setFisicShopMethod('Retirar na Loja')" [ngClass]="{'active':fisicShopMethod}"
+                mat-stroked-button>Retirar na Loja</button>
+        </div>
         <div class="sidebar-buttons">
+            <h2>Selecione a nossa hamburgueria na sua cidade</h2>
             <select class="sidebar-locations">
-                <option *ngFor="let location of location">{{location.location}}</option>
+                <option *ngFor="let location of location" value="location.location">{{location.location}}</option>
             </select>
             <button class="finish-order" mat-flat-button color="primary">Finalizar Pedido</button>
-            <button routerLink="/home" mat-stroked-button color="primary">Comprar mais</button>
+            <button class="link-btn" routerLink="/home" mat-stroked-button >Comprar mais</button>
         </div>
     </aside>
 </main>

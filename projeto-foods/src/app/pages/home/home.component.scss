@@ -145,6 +145,16 @@ button {
             font-size: 3.5rem;
         }
     }
+
+    .order-step-content{
+        font-size: 12px;
+        @media screen and (min-width: 640px){
+            font-size: 13px;
+        }
+        @media screen and (min-width: 768px){
+            font-size: 15px;
+        }
+    }
 }
 
 .order-menus {
@@ -287,11 +297,11 @@ button {
             font-weight: 100;
             font-family: var(--body-font);
             @media screen and (min-width: 640px) {
-                font-size: 15px;
+                font-size: 13px;
             }
 
             @media screen and (min-width: 768px) {
-                font-size: 17px;
+                font-size: 15px;
             }
         }
 
