@@ -128,9 +128,12 @@
 
 .text-error {
     color: rgb(207, 54, 54);
-    font-size: 12px;
     font-family: var(--body-font);
     align-self: flex-start;
+    font-size: 10px;
+    @media screen and (min-width: 768px){
+        font-size: 12px;
+    }
 }
 
 .no-account {

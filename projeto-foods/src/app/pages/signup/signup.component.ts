@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
   type: string = "password";
   isText: boolean = false;
   eyeIcon: string = '';
-
+  signUpErrorMessage: string = '';
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
       FirstName: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(20)])],
-      LastName: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(20)])],
+      LastName: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(60)])],
       UserName: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(20)])],
       Email: ['', Validators.compose([Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
       Password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/)])],
@@ -55,6 +55,7 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['']);
         }),
         error: (err) => {
+          this.signUpErrorMessage = 'Email ou nome de usuário já está em uso.'
           console.log(err?.error?.message);
         }
       });

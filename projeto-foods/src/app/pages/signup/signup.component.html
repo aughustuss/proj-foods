@@ -5,6 +5,7 @@
                 Crie sua conta
             </h1>
             <form class="signup-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <small *ngIf="signUpErrorMessage.length > 0" class="text-error" >{{signUpErrorMessage}}*</small>
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required', 'FirstName')">
                     <div class="signup-input-wrapper">
@@ -31,7 +32,7 @@
                     <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('minLength','LastName')"
                         class="text-error">Mínimo de 3 caractéres.</small>
                     <small *ngIf="signUpForm.controls['LastName'].dirty && signUpForm.hasError('maxLength','LastName')"
-                        class="text-error">Máximo de 20 caractéres.</small>
+                        class="text-error">Máximo de 60 caractéres.</small>
                 </div>
                 <div class="signup-input"
                     [class.error]="signUpForm.controls['UserName'].dirty && signUpForm.hasError('required', 'UserName')">
