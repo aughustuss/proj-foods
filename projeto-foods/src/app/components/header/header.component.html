@@ -6,7 +6,7 @@
         </a>
         <div class="header-wrapper">
             <div class="desktop">
-                <a routerLink="home" routerLinkActive="active-link">Início</a>
+                <a *ngIf="isLoggedIn()" routerLink="home" routerLinkActive="active-link">Início</a>
                 <a *ngIf="isLoggedIn()" routerLink="cart" routerLinkActive="active-link" >Carrinho</a>
                 <button mat-flat-button color="primary" class="accountBtn" *ngIf="!isLoggedIn()" routerLink="login"
                     routerLinkActive="active-link">Login</button>

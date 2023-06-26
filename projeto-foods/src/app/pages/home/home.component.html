@@ -30,9 +30,10 @@
                         <p class="order-info-ingredients">Ingredientes: {{burguer.ingredients}}</p>
                         <p class="order-info-price">R${{burguer.price}}</p>
                     </div>
-                    <button (click)="addToCart(burguer)" mat-raised-button color="primary" class="add-to-cart">
+                    <button *ngIf="isLoggedIn()" (click)="addToCart(burguer)" mat-raised-button color="primary" class="add-to-cart">
                         Adicionar
                     </button>
+                    <p class="not-logged-in" *ngIf="!isLoggedIn()">Faça <a routerLink="/login">login</a> para adicionar itens.</p>
                 </div>
             </div>
         </div>
@@ -55,10 +56,11 @@
                         <p class="order-info-title">{{drink.name}}</p>
                         <p class="order-info-price">R${{drink.price}}</p>
                     </div>
-                    <button (click)="addToCart(drink)" *ngIf="!isLoggedIn()" mat-raised-button color="primary"
+                    <button (click)="addToCart(drink)" *ngIf="isLoggedIn()" mat-raised-button color="primary"
                         class="add-to-cart">
                         Adicionar
                     </button>
+                    <p class="not-logged-in" *ngIf="!isLoggedIn()">Faça <a routerLink="login">login</a> para adicionar itens.</p>
                 </div>
             </div>
         </div>

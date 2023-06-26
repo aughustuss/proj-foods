@@ -9,12 +9,13 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { LocationsService } from 'src/app/services/locations/locations.service';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, CommonModule, MatSnackBarModule],
+  imports: [MatButtonModule, MatIconModule, CommonModule, MatSnackBarModule, RouterModule],
 })
 export class HomeComponent {
   constructor(

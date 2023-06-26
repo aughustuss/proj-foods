@@ -42,7 +42,7 @@
             justify-content: space-between;
             height: 100%;
 
-            .clear-cart {
+            .end-cart-button{
                 button {
                     font-family: var(--body-font);
                     font-size: 13px;
@@ -130,7 +130,6 @@
                             width: 100%;
                             gap: 5px;
                             justify-content: space-between;
-
                             .item-details {
                                 display: flex;
                                 flex-direction: column;
@@ -187,22 +186,16 @@
 
                             button {
                                 font-family: var(--body-font);
-                                min-width: 50px;
+                                min-width: 30px;
                                 font-size: 13px;
-
-                                @media screen and (min-width: 640px) {
-                                    min-width: 70px;
+                                .delete-icon{
+                                    height: 15px;
+                                    width: 15px;
+                                    @media screen and (min-width: 768px){
+                                        height: 20px;
+                                        width: 20px;
+                                    }
                                 }
-
-                                @media screen and (min-width: 768px) {
-                                    min-width: 95px;
-                                    font-size: 15px;
-                                }
-
-                                @media screen and (min-width: 1024px) {
-                                    min-width: 120px;
-                                }
-
                             }
                         }
                     }
