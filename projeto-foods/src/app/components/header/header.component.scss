@@ -68,8 +68,8 @@ mat-toolbar {
 
             .logo-image {
                 height: 30px;
-                width: fit-content;
-                object-fit: cover;
+                width: 140px;
+                object-fit: contain;
 
                 @media screen and (min-width: 640px) {
                     height: 40px;

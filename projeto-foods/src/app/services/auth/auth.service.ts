@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { TokenApi } from 'src/app/models/tokenapiModel';
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService implements OnInit {
-  private baseUrl: string = "https://localhost:7076/api/User";
+  private baseUrl: string = environment.apiUrl;
   private userPayload: any;
   token: string | null = '';
   constructor(private http: HttpClient, private router: Router) {
