@@ -22,11 +22,24 @@ Uma aplicação de uma hamburgueria que permite ao usuário selecionar itens e p
 
 ## Instalação
 
-Instale projeto-foods com npm
+Instale projeto-foods
 
 ```bash
-  cd projeto-foods
   npm i
+```
+
+```bash
+  pnpm i
+```
+
+```bash
+  yarn add
+```
+
+Rode projeto-foods
+
+```bash
+  ng serve -o
 ```
     
 ## Link para o projeto 
